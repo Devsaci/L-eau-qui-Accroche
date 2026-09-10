@@ -6,14 +6,15 @@
   color-scheme: dark;
 }
 
+/* Base stylée Abyssal Hard Sci-Fi */
 body {
-  background-color: #010409;
-  color: #f1f5f9;
+  background-color: #020617; /* bg-slate-950 */
+  color: #f8fafc; /* text-slate-50 pour WCAG AAA maximal */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
 
-/* Effets bioluminescents & ambiance Hard Sci-Fi */
+/* Typographies thématiques */
 .font-display {
   font-family: 'Orbitron', sans-serif;
 }
@@ -22,52 +23,76 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Scrollbar fine télémétrique */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.6);
+}
+
+/* Lueurs bioluminescentes ciblées */
 .text-glow-cyan {
-  text-shadow: 0 0 16px rgba(0, 242, 254, 0.7), 0 0 32px rgba(0, 242, 254, 0.3);
+  text-shadow: 0 0 16px rgba(34, 211, 238, 0.7), 0 0 32px rgba(6, 182, 212, 0.35);
 }
 
-.text-glow-teal {
-  text-shadow: 0 0 16px rgba(13, 245, 196, 0.7), 0 0 32px rgba(13, 245, 196, 0.3);
+.text-glow-emerald {
+  text-shadow: 0 0 16px rgba(52, 211, 153, 0.7), 0 0 32px rgba(16, 185, 129, 0.35);
 }
 
+/* Cartes abyssales avec glassmorphism */
 .card-abyssal {
-  background: linear-gradient(180deg, rgba(6, 16, 36, 0.8) 0%, rgba(3, 8, 22, 0.95) 100%);
-  border: 1px solid rgba(0, 242, 254, 0.15);
-  box-shadow: 0 12px 36px -8px rgba(1, 4, 9, 0.9);
+  background: rgba(15, 23, 42, 0.6); /* bg-slate-900/60 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(6, 182, 212, 0.2); /* border-cyan-500/20 */
+  box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.9);
+  transition: all 0.2s ease-in-out;
 }
 
 .card-abyssal:hover {
-  border-color: rgba(0, 242, 254, 0.35);
-  box-shadow: 0 0 25px -5px rgba(0, 242, 254, 0.2);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
 }
 
-/* Rendu des formules mathématiques KaTeX (écran & sombre) */
+/* Console télémétrique KaTeX pour les équations scientifiques */
 .katex-display {
-  background: #010409 !important;
-  border: 1px solid rgba(0, 242, 254, 0.35) !important;
-  border-radius: 14px !important;
+  background: rgba(2, 6, 23, 0.9) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+  border-left: 3px solid #22d3ee !important;
+  border-radius: 12px !important;
   padding: 1.25rem 1.5rem !important;
-  margin: 1.75rem 0 !important;
-  box-shadow: 0 0 20px -3px rgba(0, 242, 254, 0.25), inset 0 0 15px rgba(0, 242, 254, 0.05) !important;
+  margin: 2rem 0 !important;
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.18), inset 0 0 15px rgba(6, 182, 212, 0.03) !important;
   overflow-x: auto !important;
+  overflow-y: hidden !important;
   text-align: center !important;
+  position: relative !important;
 }
 
 .katex {
   font-size: 1.15em !important;
-  color: #00f2fe !important;
+  color: #22d3ee !important; /* cyan-400 */
 }
 
 .katex-display > .katex {
-  color: #00f2fe !important;
-  text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
 }
 
-/* Styles d'impression (@media print) : masquer UI, boutons, HUD pour sortie texte sur fond blanc */
+/* Styles d'impression (@media print) */
 @media print {
   body, html {
     background: #ffffff !important;
-    color: #111827 !important;
+    color: #0f172a !important;
   }
 
   header, footer, nav, #anomalie, #hero, #telechargement, #preuve, #protagonistes, .no-print, button, a[download] {
@@ -87,18 +112,18 @@ body {
     box-shadow: none !important;
     max-width: 100% !important;
     padding: 0 !important;
-    color: #111827 !important;
+    color: #0f172a !important;
   }
 
   .reader-prose {
-    color: #1f2937 !important;
+    color: #1e293b !important;
     font-size: 11pt !important;
     line-height: 1.6 !important;
   }
 
   .reader-prose h1, .reader-prose h2, .reader-prose h3 {
     color: #000000 !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    border-bottom: 1px solid #cbd5e1 !important;
     page-break-after: avoid;
   }
 
@@ -110,8 +135,8 @@ body {
     page-break-inside: avoid;
   }
 
-  .reader-formula, .katex-display {
-    background: #f1f5f9 !important;
+  .katex-display {
+    background: #f8fafc !important;
     border: 1px solid #cbd5e1 !important;
     color: #0f172a !important;
     box-shadow: none !important;

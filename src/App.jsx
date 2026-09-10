@@ -8,7 +8,7 @@ import DownloadSection from './components/DownloadSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-abyssal-gradient text-slate-100 relative selection:bg-biolum-cyan selection:text-abyss-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100 relative selection:bg-cyan-400 selection:text-slate-950">
       {/* Grille bathymétrique et sonar en filigrane */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-25 z-0"
