@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapitre 1 : La Bouée Inversée | L'eau qui accroche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #010409;
+      background-image: radial-gradient(ellipse at top, #061024 0%, #030816 60%, #010409 100%);
+      color: #e2e8f0;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.8;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(3, 8, 22, 0.88);
+      border: 1px solid rgba(0, 242, 254, 0.2);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.08);
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #0df5c4;
+      background: rgba(13, 245, 196, 0.1);
+      border: 1px solid rgba(13, 245, 196, 0.3);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+    .location {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #00f2fe;
+      margin-bottom: 2rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+    p strong {
+      color: #ffffff;
+    }
+    blockquote {
+      background: rgba(1, 4, 9, 0.85);
+      border-left: 4px solid #00f2fe;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #f1f5f9;
+    }
+    .formula-box {
+      background: #010409;
+      border: 1px solid rgba(0, 242, 254, 0.35);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      color: #00f2fe;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.12);
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: rgba(0, 242, 254, 0.2);
+      margin: 2.5rem 0;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #00f2fe, #0df5c4);
+      color: #010409;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      border-color: #0df5c4;
+      color: #0df5c4;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        padding: 0;
+      }
+      .container {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      h1, .location, p {
+        color: #0f172a !important;
+      }
+      blockquote {
+        background: #f8fafc !important;
+        border-left: 3px solid #0284c7 !important;
+        color: #334155 !important;
+      }
+      .formula-box {
+        background: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #0f172a !important;
+      }
+      .actions, .badge {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="badge">ROMAN HARD SCI-FI YOUNG ADULT // CHAPITRE 1</div>
+    
+    <h1>Chapitre 1 : La Bouée Inversée</h1>
+    <div class="location">// Jetée Nord de Port-Mystral — 07h14 — Marée descendante</div>
+
+    <p>Le vent d'est rabattait sur Port-Mystral une odeur qui n'appartenait pas à la mer. Pas celle du sel séché, ni celle du varech en décomposition, mais une âcreté métallique, froide et dense, semblable à l'air des chambres de décompression après un test de rupture.</p>
+
+    <p>Luna Mercier resserra le col de son ciré jaune safran. Sous son bras gauche, elle protégeait de la bruine le carnet à spirale de son grand-père. Les pages quadrillées portaient encore les encres passées de cinquante ans de relevés côtiers : des coefficients de marée, des sondages bathymétriques, et ce dernier avertissement griffonné avant qu'il ne disparaisse au large de la fosse hadale :</p>
+
+    <blockquote>
+      « Si la mer cesse de glisser sur la coque, n'écoute pas ceux qui te parleront de courant. L'eau ne ment pas, ce sont les hommes qui s'aveuglent. »
+    </blockquote>
+
+    <p>Luna s'avança jusqu'au musoir de béton. C’est là qu'elle le vit.</p>
+
+    <p>À trente mètres de la digue, la balise cardinale d’atterrage — un cylindre d’acier jaune et noir de six tonnes — ne dansait pas au rythme du clapotis. Elle demeurait inclinée à quarante-cinq degrés, figée dans la surface comme un clou tordu planté dans de la cire froide. Aucune onde capillaire ne venait rider sa ligne de flottaison. L'eau ne s'écartait pas autour de l'acier : elle semblait s'y cramponner, formant une collerette visqueuse qui défiait la gravité.</p>
+
+    <p>Luna s’accroupit au bord de l’escalier glissant du quai. Elle plongea un doigt ganté de néoprène dans l'eau sombre. Quand elle retira sa main, l'eau ne perla pas. Elle fit un fil. Une tension de surface monstrueuse, élastique, qui retenait la matière comme une toile microscopique.</p>
+
+    <p>— <strong>Elle accroche</strong>, murmura-t-elle, le cœur battant dans ses tempes.</p>
+
+    <hr>
+
+    <p>Un froissement de semelles vibra sur le granit détrempé. Théo Dubois arrivait en trottinant, son sac d'écolier sanglé sur la poitrine, alourdi par son tachymètre optique et deux éprouvettes en verre borosilicaté dérobées au laboratoire de son oncle.</p>
+
+    <p>— Tu as vu l’écran géant sur la capitainerie ? lança-t-il sans même reprendre son souffle. Élise Tamar est en direct sur la chaîne régionale. Elle prétend qu’il s’agit d’une prolifération exceptionnelle de dinoflagellés luminescents couplée à une montée d'huile de ballast. Elle affirme qu’il n’y a aucun danger. Que tout rentrera dans l’ordre d’ici la marée de midi.</p>
+
+    <p>Luna désigna la baie d’un geste sec :<br>
+    — Regarde la balise, Théo. Regarde l'étrave du remorqueur à l'arrêt. Leurs flotteurs ne pivotent même plus sur l'axe du courant.</p>
+
+    <p>Théo s’arrêta net. Ses lunettes fines glissèrent sur son nez. Il ne parla pas tout de suite. Il sortit son chronomètre mécanique et un billon de plomb suspendu à un fil de nylon millimétré.</p>
+
+    <blockquote>
+      « Une observation sans mesure n'est qu'une histoire. Si le réel déraille, la physique doit pouvoir tracer la courbe de son mensonge. »
+    </blockquote>
+
+    <p>Il lâcha le plomb d’un mètre au-dessus de la surface. Le plomb fendit l'air à vitesse nominale. Mais dès qu'il heurta les premiers millimètres du liquide de Port-Mystral, il ne s'enfonça pas avec la décélération fluide habituelle. Il fut stoppé net pendant un quart de seconde, dévié de sept degrés vers le nord-ouest, avant d'être englouti avec une résistance pâteuse.</p>
+
+    <p>Théo nota frénétiquement les chiffres sur sa tablette de calcul :</p>
+
+    <div class="formula-box">
+      ρ = m/V  &nbsp;⟶&nbsp;  Δρ(baie) ≫ ρ(eau de mer)
+    </div>
+
+    <div class="formula-box">
+      P = F/S  &nbsp;[Tenseur de cisaillement anisotrope]
+    </div>
+
+    <p>— Ce n’est pas du tout un fluide newtonien, souffla Théo, les yeux écarquillés derrière ses verres. La viscosité n'est plus proportionnelle à la contrainte. L'eau réagit à la pénétration comme un solide polymère... mais à l'échelle de toute la baie !</p>
+
+    <p>— Et le fond ? demanda Luna. Tu as senti la température ?</p>
+
+    <p>Théo plongea la sonde thermique à thermocouple à cinquante centimètres :<br>
+    — <strong>Trente-huit degrés Celsius (+38°C)</strong>. Un gradient ascendant continu. La chaleur ne vient pas du soleil de septembre. Elle monte d’en bas. Des tranchées.</p>
+
+    <p>Au loin, le bourdonnement d'une sirène retentit depuis l'île atelier. Le Dr Archimède venait d'activer le réflectomètre de son phare. L'heure des conjectures était terminée. L'enquête venait de commencer.</p>
+
+    <div class="actions">
+      <a href="/roman-extrait.pdf" download="Leau-qui-accroche-Extrait-Roman.pdf" class="btn-primary">
+        TÉLÉCHARGER L'EXTRAIT DU ROMAN (PDF)
+      </a>
+      <button onclick="window.print()" class="btn-secondary">
+        IMPRIMER / SAUVEGARDER EN PDF
+      </button>
+    </div>
+
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+</body>
+</html>

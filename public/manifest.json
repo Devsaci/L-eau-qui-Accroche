@@ -1,0 +1,17 @@
+{
+  "name": "L’eau qui accroche - Roman Sci-Fi YA",
+  "short_name": "EauQuiAccroche",
+  "description": "À Port-Mystral, le réel a cessé d’être fluide. Progressive Web App dédiée au roman de science-fiction Young Adult.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#010409",
+  "theme_color": "#030816",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
