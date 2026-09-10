@@ -1,6 +1,6 @@
 # Chapitre 1 : L'eau qui accroche
 
-### Quai Nord de Port-Mystral — 07h14 — Marée descendante
+## Quai Nord de Port-Mystral — 07h14
 
 Le vent d'est rabattait sur Port-Mystral une odeur qui n'appartenait pas à la mer. Pas celle du sel séché, ni celle du varech en décomposition, mais une âcreté métallique, froide et dense, semblable à l'air des sas de décompression sous haute pression.
 
@@ -18,7 +18,7 @@ Luna s’accroupit au ras de l'eau et plongea deux doigts gantés de néoprène.
 
 ---
 
-### La rencontre avec Théo Delmas et l'équation du réel
+## La rencontre avec Théo Delmas et l'équation du réel
 
 Un bruit de pas précipités résonna sur les pavés humides du quai. Théo Delmas (12 ans) arriva en courant, son carnet de calculs et son tachymètre optique serrés contre lui. Ses cheveux ébouriffés par la brise marine gouttaient sur ses lunettes cerclées d'acier.
 
@@ -46,6 +46,10 @@ $$
 $$
 P = \frac{F}{S} \quad \longrightarrow \quad \tau \gg \mu \frac{\partial u}{\partial y}
 $$
+
+---
+
+## Le signal d'Archimède et la rupture bathymétrique
 
 — Et la température ? insista Luna en observant l'horizon embrumé.
 

@@ -30,11 +30,12 @@ export default defineConfig({
         ]
       },
       manifest: {
+        id: '/',
         name: 'L’eau qui accroche - Roman Sci-Fi YA',
         short_name: 'EauQuiAccroche',
         description: 'À Port-Mystral, le réel a cessé d’être fluide. Roman de science-fiction Young Adult.',
-        theme_color: '#030816',
-        background_color: '#010409',
+        theme_color: '#0891b2',
+        background_color: '#020617',
         display: 'standalone',
         orientation: 'portrait-primary',
         icons: [
