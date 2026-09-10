@@ -3,76 +3,80 @@ import { Layers, ThermometerSun, Compass, ShieldAlert } from 'lucide-react';
 
 export default function TelemetryHUD() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-5xl mx-auto my-8 text-left">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto my-8 text-left">
       {/* 1. Densité */}
-      <div className="card-abyssal p-4 rounded-xl border border-cyan-500/20 bg-slate-900/60 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />
-        <div className="flex items-center justify-between text-slate-400 font-tech text-xs">
+      <div className="bg-white/90 rounded-2xl p-5 border border-stone-200/80 shadow-sm relative overflow-hidden group hover:border-stone-300 transition-colors">
+        <div className="flex items-center justify-between text-ink/70 font-mono text-xs">
           <span className="tracking-wider">// DENSITÉ HYDRO</span>
-          <Layers className="w-4 h-4 text-cyan-400" />
+          <Layers className="w-4 h-4 text-dataBlue" />
         </div>
-        <div className="mt-2 font-display font-bold text-2xl text-white tracking-wide">
+        <div className="mt-2.5 inline-block font-mono text-dataBlue bg-stone-100/80 px-3 py-1.5 rounded-lg text-xl sm:text-2xl font-semibold tracking-wide">
           ρ = m/V
         </div>
-        <div className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/30 text-[11px] text-rose-300 font-tech font-medium">
-          <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping" />
-          Anomalie +35%
+        <div>
+          <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded bg-amber-50 border border-amber-200/80 text-[11px] text-amber-800 font-mono font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-amberAccent" />
+            Anomalie +35%
+          </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-tech mt-1">
+        <div className="text-[11px] text-ink/65 font-sans mt-1.5">
           Résistance mécanique anormale
         </div>
       </div>
 
       {/* 2. Température de baie */}
-      <div className="card-abyssal p-4 rounded-xl border border-emerald-500/20 bg-slate-900/60 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-500/10 transition-colors" />
-        <div className="flex items-center justify-between text-slate-400 font-tech text-xs">
+      <div className="bg-white/90 rounded-2xl p-5 border border-stone-200/80 shadow-sm relative overflow-hidden group hover:border-stone-300 transition-colors">
+        <div className="flex items-center justify-between text-ink/70 font-mono text-xs">
           <span className="tracking-wider">// TEMPÉRATURE BAIE</span>
-          <ThermometerSun className="w-4 h-4 text-emerald-400" />
+          <ThermometerSun className="w-4 h-4 text-bay" />
         </div>
-        <div className="mt-2 font-display font-bold text-2xl text-emerald-400 tracking-wide text-glow-emerald">
+        <div className="mt-2.5 inline-block font-mono text-bay bg-stone-100/80 px-3 py-1.5 rounded-lg text-xl sm:text-2xl font-semibold tracking-wide">
           +38°C
         </div>
-        <div className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-[11px] text-emerald-300 font-tech font-medium">
-          Gradient ascendant
+        <div>
+          <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200/80 text-[11px] text-kelp font-mono font-medium">
+            Gradient ascendant
+          </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-tech mt-1">
+        <div className="text-[11px] text-ink/65 font-sans mt-1.5">
           Colonne abyssale ascendante
         </div>
       </div>
 
       {/* 3. Pression / Cisaillement */}
-      <div className="card-abyssal p-4 rounded-xl border border-cyan-500/20 bg-slate-900/60 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full blur-xl pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />
-        <div className="flex items-center justify-between text-slate-400 font-tech text-xs">
+      <div className="bg-white/90 rounded-2xl p-5 border border-stone-200/80 shadow-sm relative overflow-hidden group hover:border-stone-300 transition-colors">
+        <div className="flex items-center justify-between text-ink/70 font-mono text-xs">
           <span className="tracking-wider">// CONTRAINTE / SURFACE</span>
-          <Compass className="w-4 h-4 text-cyan-400" />
+          <Compass className="w-4 h-4 text-dataBlue" />
         </div>
-        <div className="mt-2 font-display font-bold text-2xl text-white tracking-wide">
+        <div className="mt-2.5 inline-block font-mono text-dataBlue bg-stone-100/80 px-3 py-1.5 rounded-lg text-xl sm:text-2xl font-semibold tracking-wide">
           P = F/S
         </div>
-        <div className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-[11px] text-cyan-300 font-tech font-medium">
-          Fluide non-newtonien
+        <div>
+          <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded bg-sky-50 border border-sky-200/80 text-[11px] text-bay font-mono font-medium">
+            Fluide non-newtonien
+          </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-tech mt-1">
+        <div className="text-[11px] text-ink/65 font-sans mt-1.5">
           Vecteur de force dévié
         </div>
       </div>
 
       {/* 4. Statut de l'enquête */}
-      <div className="card-abyssal p-4 rounded-xl border border-emerald-500/20 bg-slate-900/60 relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-500/10 transition-colors" />
-        <div className="flex items-center justify-between text-slate-400 font-tech text-xs">
+      <div className="bg-white/90 rounded-2xl p-5 border border-stone-200/80 shadow-sm relative overflow-hidden group hover:border-stone-300 transition-colors">
+        <div className="flex items-center justify-between text-ink/70 font-mono text-xs">
           <span className="tracking-wider">// ENQUÊTE INDÉPENDANTE</span>
-          <ShieldAlert className="w-4 h-4 text-emerald-400" />
+          <ShieldAlert className="w-4 h-4 text-amberAccent" />
         </div>
-        <div className="mt-2 font-display font-bold text-xl text-emerald-400 tracking-wide uppercase">
+        <div className="mt-2.5 inline-block font-mono text-bay bg-stone-100/80 px-3 py-1.5 rounded-lg text-lg sm:text-xl font-semibold tracking-wide uppercase">
           Méthode active
         </div>
-        <div className="inline-flex items-center gap-1.5 mt-2 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-[11px] text-emerald-300 font-tech font-medium">
-          Réfutation empirique
+        <div>
+          <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded bg-amber-50 border border-amber-200/80 text-[11px] text-amber-800 font-mono font-medium">
+            Réfutation empirique
+          </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-tech mt-1">
+        <div className="text-[11px] text-ink/65 font-sans mt-1.5">
           Face au déni institutionnel
         </div>
       </div>

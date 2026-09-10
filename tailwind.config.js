@@ -8,6 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Tokens du Design System (Soft UI / Carnet de recherche)
+        paper: '#F5F1E8',
+        ink: '#1A2A33',
+        bay: '#1F4E5F',
+        kelp: '#7BA05B',
+        amberAccent: '#E8A33D',
+        dataBlue: '#3D8B9E',
+
         // Profondeurs abyssales (fonds sombres & zones océaniques)
         abyss: {
           950: '#010409', // Fosse hadale / noir d'encre absolu
@@ -37,6 +45,9 @@ export default {
         },
       },
       fontFamily: {
+        serif: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
         tech: ['JetBrains Mono', 'Fira Code', 'monospace'],
         display: ['Orbitron', 'sans-serif'],
       },
