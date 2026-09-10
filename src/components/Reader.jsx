@@ -16,11 +16,30 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Bookmark,
   CheckCircle2,
   BookMarked
 } from 'lucide-react';
 import chapters from '../content/chapters.js';
+
+// Fonction de slugification robuste partagée gérant les accents, apostrophes et caractères spéciaux
+export const slugify = (text) =>
+  String(text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['’]/g, '-')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+
+// Extraction récursive du texte brut depuis les enfants React
+const getNodeText = (node) => {
+  if (!node) return '';
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(getNodeText).join('');
+  if (node.props && node.props.children) return getNodeText(node.props.children);
+  return '';
+};
 
 export default function Reader() {
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
@@ -39,7 +58,7 @@ export default function Reader() {
     xl: 'text-xl sm:text-2xl leading-loose',
   };
 
-  // Extraction automatique des titres Markdown h2 pour le sommaire
+  // Extraction automatique des titres Markdown h2 pour le sommaire avec slugification harmonisée
   const headings = useMemo(() => {
     if (!currentChapter?.content) return [];
     const h2Regex = /^##\s+(.+)$/gm;
@@ -47,15 +66,8 @@ export default function Reader() {
     let match;
     while ((match = h2Regex.exec(currentChapter.content)) !== null) {
       const rawText = match[1].trim();
-      // Génération de l'identifiant slug compatible avec rehype-slug
-      const slug = rawText
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[^a-z0-9\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-');
-      items.push({ text: rawText, id: slug });
+      const id = slugify(rawText);
+      items.push({ text: rawText, id });
     }
     return items;
   }, [currentChapter]);
@@ -65,22 +77,49 @@ export default function Reader() {
     if (newIndex >= 0 && newIndex < chapters.length) {
       setCurrentChapterIndex(newIndex);
       setIsTocOpen(false);
+      // Nettoyage du hash si on change de chapitre
+      if (window.location.hash) {
+        window.history.pushState(null, '', window.location.pathname);
+      }
       setTimeout(() => {
         readerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 50);
     }
   };
 
-  // Défilement fluide vers une section ciblée
-  const handleScrollToHeading = (id) => {
+  // Action au clic sur une section du sommaire
+  const handleSectionClick = (e, slug) => {
+    e.preventDefault();
+
+    // a) Mise à jour de l'URL avec l'ancre sans recharger la page
+    window.history.pushState(null, '', `#${slug}`);
+
+    // d) Fermeture du panneau du sommaire
     setIsTocOpen(false);
+
+    // b) & c) Recherche de l'élément cible et défilement fluide
     setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const targetEl = document.getElementById(slug) || document.querySelector(`[id="${slug}"]`);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 100);
+    }, 60);
   };
+
+  // Synchronisation initiale : si l'URL contient déjà un hash lors de l'affichage
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      const slug = decodeURIComponent(hash.substring(1));
+      const timer = setTimeout(() => {
+        const targetEl = document.getElementById(slug) || document.querySelector(`[id="${slug}"]`);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 250);
+      return () => clearTimeout(timer);
+    }
+  }, [currentChapterIndex]);
 
   // Écoute de la touche Échap pour refermer le sommaire
   useEffect(() => {
@@ -286,9 +325,10 @@ export default function Reader() {
                   <ul className="space-y-2">
                     {headings.map((h, i) => (
                       <li key={h.id || i}>
-                        <button
-                          onClick={() => handleScrollToHeading(h.id)}
-                          className="w-full text-left p-2.5 rounded-lg bg-abyss-850/60 hover:bg-abyss-800 border border-transparent hover:border-biolum-cyan/30 text-xs text-slate-300 hover:text-biolum-cyan transition-all flex items-start gap-2.5 group"
+                        <a
+                          href={`#${h.id}`}
+                          onClick={(e) => handleSectionClick(e, h.id)}
+                          className="w-full text-left p-2.5 rounded-lg bg-abyss-850/60 hover:bg-abyss-800 border border-transparent hover:border-biolum-cyan/30 text-xs text-slate-300 hover:text-biolum-cyan transition-all flex items-start gap-2.5 group block"
                         >
                           <span className="text-[10px] font-mono text-biolum-teal/70 group-hover:text-biolum-teal mt-0.5">
                             § {currentChapter.number}.{i + 1}
@@ -296,7 +336,7 @@ export default function Reader() {
                           <span className="flex-1 font-serif leading-snug">
                             {h.text}
                           </span>
-                        </button>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -338,16 +378,21 @@ export default function Reader() {
                     {...props}
                   />
                 ),
-                h2: ({ node, ...props }) => (
-                  <h2
-                    id={props.id}
-                    className="font-display font-bold text-xl sm:text-2xl text-white tracking-wide mt-12 mb-4 pb-2 border-b border-abyss-800/80 flex items-center gap-3 scroll-mt-24 group"
-                    {...props}
-                  >
-                    <span className="w-1.5 h-6 rounded-full bg-gradient-to-b from-biolum-cyan to-biolum-teal inline-block shadow-biolum-cyan group-hover:scale-y-125 transition-transform" />
-                    <span className="flex-1">{props.children}</span>
-                  </h2>
-                ),
+                h2: ({ node, children, ...props }) => {
+                  const text = getNodeText(children);
+                  const id = slugify(text);
+                  const { id: _ignoredId, ...restProps } = props;
+                  return (
+                    <h2
+                      id={id}
+                      className="scroll-mt-24 text-xl sm:text-2xl font-bold text-cyan-200 mt-10 mb-4 border-b border-cyan-900/50 pb-2 font-display flex items-center gap-3 group"
+                      {...restProps}
+                    >
+                      <span className="w-1.5 h-6 rounded-full bg-gradient-to-b from-biolum-cyan to-biolum-teal inline-block shadow-biolum-cyan group-hover:scale-y-125 transition-transform" />
+                      <span className="flex-1">{children}</span>
+                    </h2>
+                  );
+                },
                 h3: ({ node, ...props }) => (
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-abyss-850 border border-biolum-teal/30 text-biolum-teal text-xs font-tech my-4">
                     <Compass className="w-3.5 h-3.5 animate-pulse text-biolum-teal" />
