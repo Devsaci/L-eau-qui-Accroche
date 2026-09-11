@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapitre 1 : La Bouée Inversée | L'eau qui accroche</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: dark;
+      color-scheme: light;
     }
     * {
       box-sizing: border-box;
@@ -17,84 +17,90 @@
       padding: 0;
     }
     body {
-      background-color: #010409;
-      background-image: radial-gradient(ellipse at top, #061024 0%, #030816 60%, #010409 100%);
-      color: #e2e8f0;
+      background-color: #F5F1E8;
+      color: #1A2A33;
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.8;
       min-height: 100vh;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
     }
     .container {
       max-width: 820px;
       margin: 0 auto;
-      background: rgba(3, 8, 22, 0.88);
-      border: 1px solid rgba(0, 242, 254, 0.2);
-      border-radius: 24px;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.08);
+      background: #FAF8F3;
+      border: 1px solid rgba(31, 78, 95, 0.18);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 12px 30px -5px rgba(26, 42, 51, 0.08), 0 2px 8px -2px rgba(26, 42, 51, 0.04);
       position: relative;
     }
     .badge {
       display: inline-block;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      color: #0df5c4;
-      background: rgba(13, 245, 196, 0.1);
-      border: 1px solid rgba(13, 245, 196, 0.3);
-      padding: 0.35rem 0.8rem;
+      color: #1F4E5F;
+      background: #F0F6F8;
+      border: 1px solid rgba(31, 78, 95, 0.25);
+      padding: 0.35rem 0.85rem;
       border-radius: 9999px;
       margin-bottom: 1.25rem;
       letter-spacing: 0.05em;
+      font-weight: 600;
     }
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      color: #ffffff;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.6rem;
+      color: #1A2A33;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(31, 78, 95, 0.15);
       padding-bottom: 1rem;
+      line-height: 1.2;
     }
     .location {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      color: #00f2fe;
-      margin-bottom: 2rem;
+      color: #1F4E5F;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
     }
     p {
       margin-bottom: 1.5rem;
-      color: #cbd5e1;
+      color: #2C3E4D;
       font-size: 1.05rem;
     }
     p strong {
-      color: #ffffff;
+      color: #1A2A33;
     }
     blockquote {
-      background: rgba(1, 4, 9, 0.85);
-      border-left: 4px solid #00f2fe;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
+      background: #F5F1E8;
+      border-left: 4px solid #E8A33D;
+      border-radius: 10px;
+      padding: 1.25rem 1.75rem;
       margin: 2rem 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
-      color: #f1f5f9;
+      font-size: 1.15rem;
+      color: #1A2A33;
+      box-shadow: 0 2px 6px rgba(26, 42, 51, 0.03);
     }
     .formula-box {
-      background: #010409;
-      border: 1px solid rgba(0, 242, 254, 0.35);
-      border-radius: 12px;
+      background: #F5F1E8;
+      border: 1px solid rgba(31, 78, 95, 0.2);
+      border-left: 3px solid #1F4E5F;
+      border-radius: 8px;
       padding: 1.2rem;
       margin: 1.75rem 0;
       text-align: center;
       font-family: 'JetBrains Mono', monospace;
-      color: #00f2fe;
-      font-size: 1.1rem;
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.12);
+      color: #1A2A33;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 8px rgba(26, 42, 51, 0.04);
     }
     hr {
       border: none;
       height: 1px;
-      background: rgba(0, 242, 254, 0.2);
+      background: rgba(31, 78, 95, 0.15);
       margin: 2.5rem 0;
     }
     .actions {
@@ -103,43 +109,45 @@
       gap: 1rem;
       margin-top: 3rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(31, 78, 95, 0.15);
     }
     .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, #00f2fe, #0df5c4);
-      color: #010409;
-      font-family: 'Orbitron', sans-serif;
+      background: #1F4E5F;
+      color: #ffffff;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 1rem;
       text-decoration: none;
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.6rem;
       border-radius: 10px;
-      transition: opacity 0.2s;
+      transition: background-color 0.2s;
     }
     .btn-primary:hover {
-      opacity: 0.9;
+      background: #153642;
     }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: #e2e8f0;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #ffffff;
+      color: #1A2A33;
+      border: 1px solid rgba(31, 78, 95, 0.25);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 500;
       padding: 0.85rem 1.5rem;
       border-radius: 10px;
       cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
     }
     .btn-secondary:hover {
-      border-color: #0df5c4;
-      color: #0df5c4;
+      border-color: #E8A33D;
+      color: #C4811D;
     }
     @media print {
       body {
         background: #ffffff !important;
-        color: #111827 !important;
+        color: #1A2A33 !important;
         padding: 0;
       }
       .container {
@@ -150,17 +158,17 @@
         max-width: 100% !important;
       }
       h1, .location, p {
-        color: #0f172a !important;
+        color: #1A2A33 !important;
       }
       blockquote {
-        background: #f8fafc !important;
-        border-left: 3px solid #0284c7 !important;
-        color: #334155 !important;
+        background: #FAF8F3 !important;
+        border-left: 3px solid #E8A33D !important;
+        color: #1A2A33 !important;
       }
       .formula-box {
-        background: #f1f5f9 !important;
-        border: 1px solid #cbd5e1 !important;
-        color: #0f172a !important;
+        background: #FAF8F3 !important;
+        border: 1px solid rgba(31, 78, 95, 0.2) !important;
+        color: #1A2A33 !important;
       }
       .actions, .badge {
         display: none !important;

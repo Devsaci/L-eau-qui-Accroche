@@ -8,13 +8,13 @@ import DownloadSection from './components/DownloadSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 relative selection:bg-cyan-400 selection:text-slate-950">
-      {/* Grille bathymétrique et sonar en filigrane */}
+    <div className="min-h-screen bg-paper text-ink relative selection:bg-gold/25 selection:text-ink">
+      {/* Grille de carnet de terrain en filigrane discret brique */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-25 z-0"
+        className="fixed inset-0 pointer-events-none opacity-40 z-0"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(0, 242, 254, 0.12) 1px, transparent 1px)',
-          backgroundSize: '36px 36px'
+          backgroundImage: 'radial-gradient(circle, rgba(140, 45, 25, 0.08) 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
         }}
       />
       
@@ -31,22 +31,26 @@ export default function App() {
           </main>
         </div>
 
-        {/* Footer Hard Sci-Fi Port-Mystral */}
-        <footer className="border-t border-abyss-800 bg-abyss-950/90 py-10 px-4 text-center font-tech text-xs text-slate-500">
-          <div className="max-w-4xl mx-auto space-y-3">
-            <p className="text-slate-400">
+        {/* Footer Carnet de Recherche Port-Mystral / Station Archimède */}
+        <footer className="border-t border-brick/15 bg-paper-card/90 py-12 px-4 text-center font-mono text-xs text-ink-muted">
+          <div className="max-w-4xl mx-auto space-y-4">
+            <p className="font-serif font-bold tracking-wide text-base text-brick">
               « L’EAU QUI ACCROCHE » // ROMAN HARD SCI-FI YOUNG ADULT // BAIE DE PORT-MYSTRAL
             </p>
-            <p className="text-slate-400">
+            <p className="font-serif italic text-sm text-ink-light max-w-xl mx-auto">
               « Une observation sans mesure n'est qu'une histoire. La science est une patience. »
             </p>
-            <div className="pt-4 border-t border-abyss-800/60 flex flex-wrap justify-center gap-6 text-[11px] text-slate-400">
-              <span>Station Archimède</span>
+            <div className="pt-4 border-t border-brick/10 flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-[11px] text-ink-muted">
+              <span className="font-medium text-brick">Station Archimède — Île atelier</span>
               <span>•</span>
-              <span>Progressive Web App (PWA) Offline-Ready</span>
+              <span className="text-rust font-medium">Progressive Web App (PWA) Hors-Ligne</span>
               <span>•</span>
-              <a href="/roman-extrait.pdf" download="Leau-qui-accroche-Extrait-Roman.pdf" className="hover:text-biolum-cyan transition-colors underline">
-                Extrait PDF disponible
+              <a 
+                href="/roman-extrait.pdf" 
+                download="Leau-qui-accroche-Extrait-Roman.pdf" 
+                className="text-brick hover:text-rust transition-colors underline underline-offset-4 decoration-brick/30 hover:decoration-rust"
+              >
+                Extrait PDF du manuscrit
               </a>
             </div>
           </div>

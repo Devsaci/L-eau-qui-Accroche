@@ -3,75 +3,72 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
-/* Base stylée Abyssal Hard Sci-Fi */
+/* Base Carnet de Recherche : Automne, Rouge Brique et Or */
 body {
-  background-color: #020617; /* bg-slate-950 */
-  color: #f8fafc; /* text-slate-50 pour WCAG AAA maximal */
+  background-color: #F7F2E8; /* Fond papier parchemin chaud */
+  color: #221C18; /* Encre bistre profond */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
 
 /* Typographies thématiques */
-.font-display {
-  font-family: 'Orbitron', sans-serif;
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-.font-tech {
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-mono, .font-tech {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Scrollbar fine télémétrique */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Scrollbar discrète parchemin & brique */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #F7F2E8;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.25);
+  background: rgba(140, 45, 25, 0.25);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.6);
+  background: rgba(140, 45, 25, 0.45);
 }
 
-/* Lueurs bioluminescentes ciblées */
-.text-glow-cyan {
-  text-shadow: 0 0 16px rgba(34, 211, 238, 0.7), 0 0 32px rgba(6, 182, 212, 0.35);
-}
-
-.text-glow-emerald {
-  text-shadow: 0 0 16px rgba(52, 211, 153, 0.7), 0 0 32px rgba(16, 185, 129, 0.35);
-}
-
-/* Cartes abyssales avec glassmorphism */
-.card-abyssal {
-  background: rgba(15, 23, 42, 0.6); /* bg-slate-900/60 */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(6, 182, 212, 0.2); /* border-cyan-500/20 */
-  box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.9);
+/* Cartes feuillet carnet de recherche (papier épais #EDE4D3 avec bordure brique discrète) */
+.card-carnet, .card-abyssal {
+  background: #EDE4D3;
+  border: 1px solid rgba(140, 45, 25, 0.2);
+  box-shadow: 0 4px 16px -2px rgba(34, 28, 24, 0.06), 0 1px 3px -1px rgba(34, 28, 24, 0.04);
   transition: all 0.2s ease-in-out;
 }
 
-.card-abyssal:hover {
-  border-color: rgba(34, 211, 238, 0.35);
-  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+.card-carnet:hover, .card-abyssal:hover {
+  border-color: rgba(140, 45, 25, 0.38);
+  box-shadow: 0 8px 24px -4px rgba(34, 28, 24, 0.1);
 }
 
-/* Console télémétrique KaTeX pour les équations scientifiques */
+/* Console d'équations KaTeX - Rendu encre bistre sur cartouche parchemin */
 .katex-display {
-  background: rgba(2, 6, 23, 0.9) !important;
-  border: 1px solid rgba(6, 182, 212, 0.3) !important;
-  border-left: 3px solid #22d3ee !important;
-  border-radius: 12px !important;
+  background: #EDE4D3 !important;
+  border: 1px solid rgba(140, 45, 25, 0.25) !important;
+  border-left: 3px solid #8C2D19 !important;
+  border-radius: 8px !important;
   padding: 1.25rem 1.5rem !important;
   margin: 2rem 0 !important;
-  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.18), inset 0 0 15px rgba(6, 182, 212, 0.03) !important;
+  box-shadow: 0 2px 10px -2px rgba(34, 28, 24, 0.06) !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   text-align: center !important;
@@ -80,19 +77,19 @@ body {
 
 .katex {
   font-size: 1.15em !important;
-  color: #22d3ee !important; /* cyan-400 */
+  color: #221C18 !important; /* Encre bistre profond */
 }
 
 .katex-display > .katex {
-  color: #22d3ee !important;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
+  color: #221C18 !important;
+  text-shadow: none !important;
 }
 
 /* Styles d'impression (@media print) */
 @media print {
   body, html {
     background: #ffffff !important;
-    color: #0f172a !important;
+    color: #221C18 !important;
   }
 
   header, footer, nav, #anomalie, #hero, #telechargement, #preuve, #protagonistes, .no-print, button, a[download] {
@@ -112,40 +109,40 @@ body {
     box-shadow: none !important;
     max-width: 100% !important;
     padding: 0 !important;
-    color: #0f172a !important;
+    color: #221C18 !important;
   }
 
   .reader-prose {
-    color: #1e293b !important;
+    color: #221C18 !important;
     font-size: 11pt !important;
     line-height: 1.6 !important;
   }
 
   .reader-prose h1, .reader-prose h2, .reader-prose h3 {
-    color: #000000 !important;
-    border-bottom: 1px solid #cbd5e1 !important;
+    color: #8C2D19 !important;
+    border-bottom: 1px solid rgba(140, 45, 25, 0.2) !important;
     page-break-after: avoid;
   }
 
   .reader-prose blockquote {
-    background: #f8fafc !important;
-    border-left: 4px solid #0284c7 !important;
-    color: #334155 !important;
+    background: #FAF8F3 !important;
+    border-left: 3px solid #D49A3D !important;
+    color: #3B322C !important;
     padding: 12px 18px !important;
     page-break-inside: avoid;
   }
 
   .katex-display {
-    background: #f8fafc !important;
-    border: 1px solid #cbd5e1 !important;
-    color: #0f172a !important;
+    background: #FAF8F3 !important;
+    border: 1px solid rgba(140, 45, 25, 0.2) !important;
+    color: #221C18 !important;
     box-shadow: none !important;
     page-break-inside: avoid;
     text-shadow: none !important;
   }
 
   .katex, .katex-display > .katex {
-    color: #0f172a !important;
+    color: #221C18 !important;
     text-shadow: none !important;
   }
 }
