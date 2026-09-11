@@ -55,12 +55,12 @@ export default function Reader() {
 
   const currentChapter = chapters[currentChapterIndex] || chapters[0];
 
-  // Tailles de police et interlignages calibrés pour la mise en page "Beau Livre"
+  // Tailles de police et interlignages calibrés pour le confort de lecture prolongée
   const fontSizes = {
-    sm: 'text-base leading-relaxed',
-    base: 'text-lg leading-relaxed sm:leading-loose',
-    lg: 'text-xl leading-relaxed sm:leading-loose',
-    xl: 'text-2xl leading-loose',
+    sm: 'text-sm sm:text-base leading-relaxed',
+    base: 'text-base sm:text-lg leading-relaxed sm:leading-loose',
+    lg: 'text-lg sm:text-xl leading-relaxed sm:leading-loose',
+    xl: 'text-xl sm:text-2xl leading-loose',
   };
 
   // Suivi en temps réel de la progression de lecture dans le chapitre
@@ -166,12 +166,12 @@ export default function Reader() {
     <section
       id="lecture"
       ref={readerRef}
-      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-stone-200/80 scroll-mt-6"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-10 border-t border-cyan-500/20 scroll-mt-6"
     >
-      {/* Barre de progression de lecture supérieure discrète */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-stone-200/80 z-50 pointer-events-none">
+      {/* Barre de progression de lecture supérieure (discrète & luminescente) */}
+      <div className="fixed top-0 left-0 right-0 h-1 bg-slate-900/60 z-50 pointer-events-none">
         <div
-          className="h-full bg-amberAccent shadow-xs transition-all duration-150"
+          className="h-full bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-150"
           style={{ width: `${readingProgress}%` }}
         />
       </div>
@@ -179,16 +179,16 @@ export default function Reader() {
       <div className="max-w-4xl mx-auto">
 
         {/* En-tête du lecteur & barre d'outils avec cibles tactiles calibrées (min 44px) */}
-        <div className="no-print mb-8 flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-stone-200/80">
+        <div className="no-print mb-8 flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-cyan-500/20">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-white/90 border border-stone-200/80 flex items-center justify-center text-bay shadow-sm">
+            <div className="w-11 h-11 rounded-xl bg-slate-900/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_-3px_rgba(34,211,238,0.3)]">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <span className="font-mono text-xs text-bay uppercase tracking-wider block font-semibold">
+              <span className="font-tech text-xs text-emerald-400 uppercase tracking-wider block font-semibold">
                 Extrait officiel // Chapitre {currentChapter.number} : {currentChapter.title}
               </span>
-              <span className="text-ink/65 text-xs font-sans">
+              <span className="text-slate-400 text-xs font-tech">
                 {currentChapter.subtitle} // Roman Hard Sci-Fi YA
               </span>
             </div>
@@ -198,40 +198,40 @@ export default function Reader() {
           <div className="flex flex-wrap items-center gap-2.5">
             
             {/* Indicateur télémétrique de progression de lecture */}
-            <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/90 border border-stone-200/80 text-xs font-mono text-ink/75 min-h-[44px] shadow-xs">
-              <Activity className="w-3.5 h-3.5 text-amberAccent animate-pulse" />
-              <span className="text-ink/60">Progression :</span>
-              <span className="font-bold text-bay">{readingProgress}%</span>
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-900/70 border border-cyan-500/20 text-xs font-tech text-slate-300 min-h-[44px]">
+              <Activity className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+              <span className="text-slate-400">Progression :</span>
+              <span className="font-bold text-cyan-300">{readingProgress}%</span>
             </div>
 
             {/* Bouton Panneau Sommaire */}
             <button
               onClick={() => setIsTocOpen(!isTocOpen)}
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-sans font-medium transition-all min-h-[44px] shadow-xs ${
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border text-xs font-tech transition-all min-h-[44px] ${
                 isTocOpen
-                  ? 'bg-bay text-white border-bay font-bold'
-                  : 'bg-white/90 border-stone-200/80 text-bay hover:bg-stone-50 hover:border-bay/40'
+                  ? 'bg-cyan-400 text-slate-950 border-cyan-400 font-bold shadow-[0_0_15px_rgba(34,211,238,0.4)]'
+                  : 'bg-slate-900/80 border-cyan-500/30 text-slate-200 hover:text-cyan-300 hover:border-cyan-400'
               }`}
               title="Ouvrir le sommaire du roman et les sections du chapitre"
               aria-label="Ouvrir le sommaire"
             >
-              <List className={`w-4 h-4 ${isTocOpen ? 'text-white' : 'text-amberAccent'}`} />
+              <List className="w-4 h-4" />
               <span>Sommaire</span>
               <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-                isTocOpen ? 'bg-white/20 text-white' : 'bg-amberAccent text-white'
+                isTocOpen ? 'bg-slate-950 text-cyan-300' : 'bg-cyan-500/20 text-cyan-300'
               }`}>
                 {headings.length}
               </span>
             </button>
 
             {/* Bascule Serif / Sans */}
-            <div className="inline-flex rounded-xl bg-white/90 border border-stone-200/80 p-1 text-xs font-sans min-h-[44px] items-center shadow-xs">
+            <div className="inline-flex rounded-lg bg-slate-900/80 border border-cyan-500/20 p-1 text-xs font-tech min-h-[44px] items-center">
               <button
                 onClick={() => setFontFamily('serif')}
-                className={`px-3 py-1.5 rounded-lg transition-colors min-h-[36px] ${
+                className={`px-3 py-1.5 rounded-md transition-colors min-h-[36px] ${
                   fontFamily === 'serif'
-                    ? 'bg-bay text-white font-bold'
-                    : 'text-ink/65 hover:text-bay'
+                    ? 'bg-cyan-500/20 text-cyan-300 font-semibold'
+                    : 'text-slate-400 hover:text-white'
                 }`}
                 title="Typographie roman avec empattement"
               >
@@ -239,10 +239,10 @@ export default function Reader() {
               </button>
               <button
                 onClick={() => setFontFamily('sans')}
-                className={`px-3 py-1.5 rounded-lg transition-colors min-h-[36px] ${
+                className={`px-3 py-1.5 rounded-md transition-colors min-h-[36px] ${
                   fontFamily === 'sans'
-                    ? 'bg-bay text-white font-bold'
-                    : 'text-ink/65 hover:text-bay'
+                    ? 'bg-cyan-500/20 text-cyan-300 font-semibold'
+                    : 'text-slate-400 hover:text-white'
                 }`}
                 title="Typographie moderne sans-serif"
               >
@@ -251,7 +251,7 @@ export default function Reader() {
             </div>
 
             {/* Ajustement taille de police */}
-            <div className="inline-flex items-center gap-1 rounded-xl bg-white/90 border border-stone-200/80 px-2 py-1 text-xs font-mono text-ink/75 min-h-[44px] shadow-xs">
+            <div className="inline-flex items-center gap-1 rounded-lg bg-slate-900/80 border border-cyan-500/20 px-2 py-1 text-xs font-tech text-slate-300 min-h-[44px]">
               <button
                 onClick={() => {
                   if (fontSize === 'xl') setFontSize('lg');
@@ -259,13 +259,13 @@ export default function Reader() {
                   else if (fontSize === 'base') setFontSize('sm');
                 }}
                 disabled={fontSize === 'sm'}
-                className="hover:text-bay disabled:opacity-30 p-2 min-h-[36px] min-w-[36px] flex items-center justify-center text-bay"
+                className="hover:text-cyan-300 disabled:opacity-30 p-2 min-h-[36px] min-w-[36px] flex items-center justify-center"
                 title="Diminuer la taille du texte"
                 aria-label="Diminuer la taille"
               >
                 <Minus className="w-4 h-4" />
               </button>
-              <span className="px-2 text-xs font-bold text-ink">A</span>
+              <span className="px-2 text-xs font-bold text-white">A</span>
               <button
                 onClick={() => {
                   if (fontSize === 'sm') setFontSize('base');
@@ -273,7 +273,7 @@ export default function Reader() {
                   else if (fontSize === 'lg') setFontSize('xl');
                 }}
                 disabled={fontSize === 'xl'}
-                className="hover:text-bay disabled:opacity-30 p-2 min-h-[36px] min-w-[36px] flex items-center justify-center text-bay"
+                className="hover:text-cyan-300 disabled:opacity-30 p-2 min-h-[36px] min-w-[36px] flex items-center justify-center"
                 title="Augmenter la taille du texte"
                 aria-label="Augmenter la taille"
               >
@@ -289,27 +289,27 @@ export default function Reader() {
             isTocOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
-          {/* Arrière-plan estompé */}
+          {/* Arrière-plan sombre avec flou d'ambiance */}
           <div
             onClick={() => setIsTocOpen(false)}
-            className="fixed inset-0 bg-stone-900/30 backdrop-blur-xs"
+            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm"
           />
 
           {/* Tiroir latéral coulissant */}
           <aside
-            className={`relative w-full max-w-md bg-paper border-l border-stone-200/80 shadow-2xl p-6 flex flex-col h-full z-10 overflow-y-auto transform transition-transform duration-300 ease-out ${
+            className={`relative w-full max-w-md bg-slate-900/95 border-l border-cyan-500/30 shadow-2xl p-6 flex flex-col h-full z-10 overflow-y-auto transform transition-transform duration-300 ease-out ${
               isTocOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
             {/* En-tête du Sommaire */}
-            <div className="flex items-center justify-between pb-4 border-b border-stone-200/80">
-              <div className="flex items-center gap-2 text-bay font-serif font-bold text-base tracking-wide">
-                <BookMarked className="w-4 h-4 text-amberAccent" />
+            <div className="flex items-center justify-between pb-4 border-b border-cyan-500/20">
+              <div className="flex items-center gap-2 text-cyan-300 font-display font-bold text-sm tracking-wide">
+                <BookMarked className="w-4 h-4 text-cyan-400" />
                 <span>SOMMAIRE DU MANUSCRIT</span>
               </div>
               <button
                 onClick={() => setIsTocOpen(false)}
-                className="p-2.5 rounded-xl bg-white border border-stone-200/80 text-ink/70 hover:text-ink hover:bg-stone-100 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center shadow-xs"
+                className="p-2.5 rounded-xl bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label="Fermer le sommaire"
               >
                 <X className="w-5 h-5" />
@@ -318,7 +318,7 @@ export default function Reader() {
 
             {/* Sélection des chapitres */}
             <div className="mt-6">
-              <span className="text-[11px] font-mono text-ink/60 uppercase tracking-wider block mb-3 font-semibold">
+              <span className="text-[11px] font-tech text-slate-400 uppercase tracking-wider block mb-3 font-semibold">
                 Chapitres disponibles ({chapters.length})
               </span>
               <div className="space-y-2.5">
@@ -330,27 +330,27 @@ export default function Reader() {
                       onClick={() => handleChapterChange(idx)}
                       className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-start justify-between gap-3 min-h-[48px] ${
                         isActive
-                          ? 'bg-bay/10 border-bay/60 text-bay shadow-xs'
-                          : 'bg-white/90 border-stone-200/80 text-ink/80 hover:border-bay/40 hover:bg-white'
+                          ? 'bg-cyan-500/10 border-cyan-400/60 text-white shadow-[0_0_12px_rgba(34,211,238,0.15)]'
+                          : 'bg-slate-900/70 border-slate-800 text-slate-300 hover:border-cyan-500/30 hover:bg-slate-800/80'
                       }`}
                     >
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className={`text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded ${
-                            isActive ? 'bg-bay text-white' : 'bg-stone-100 text-ink/70'
+                          <span className={`text-[10px] font-tech font-bold uppercase px-2 py-0.5 rounded ${
+                            isActive ? 'bg-cyan-400 text-slate-950' : 'bg-slate-800 text-slate-300'
                           }`}>
                             Chapitre {chap.number}
                           </span>
-                          <span className="text-xs font-semibold text-bay font-serif">
+                          <span className="text-xs font-semibold text-white font-display">
                             {chap.title}
                           </span>
                         </div>
-                        <p className="text-[11px] text-ink/60 mt-1 line-clamp-1 font-sans">
+                        <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 font-tech">
                           {chap.subtitle}
                         </p>
                       </div>
                       {isActive && (
-                        <CheckCircle2 className="w-4 h-4 text-amberAccent shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       )}
                     </button>
                   );
@@ -361,16 +361,16 @@ export default function Reader() {
             {/* Sections h2 extraites du chapitre actif (cibles tactiles min 48px) */}
             <div className="mt-8 flex-1">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-mono text-ink/60 uppercase tracking-wider font-semibold">
+                <span className="text-[11px] font-tech text-slate-400 uppercase tracking-wider font-semibold">
                   Sections du Chapitre {currentChapter.number} ({headings.length})
                 </span>
-                <span className="text-[10px] text-dataBlue font-mono">
+                <span className="text-[10px] text-emerald-400 font-mono">
                   Navigation directe
                 </span>
               </div>
 
               {headings.length === 0 ? (
-                <p className="text-xs text-ink/50 font-sans py-4 italic">
+                <p className="text-xs text-slate-500 font-tech py-4 italic">
                   Aucune sous-section h2 détectée dans ce chapitre.
                 </p>
               ) : (
@@ -380,12 +380,12 @@ export default function Reader() {
                       <a
                         href={`#${h.id}`}
                         onClick={(e) => handleSectionClick(e, h.id)}
-                        className="w-full text-left p-3 rounded-xl bg-white/80 hover:bg-amberAccent/5 border border-stone-200/70 hover:border-amberAccent/40 text-xs text-ink/80 hover:text-bay transition-all flex items-start gap-3 group min-h-[48px]"
+                        className="w-full text-left p-3 rounded-xl bg-slate-800/40 hover:bg-slate-800/80 border border-slate-800/80 hover:border-cyan-500/30 text-xs text-slate-200 hover:text-cyan-300 transition-all flex items-start gap-3 group min-h-[48px]"
                       >
-                        <span className="text-[11px] font-mono text-dataBlue group-hover:text-bay mt-0.5 shrink-0">
+                        <span className="text-[11px] font-mono text-emerald-400/80 group-hover:text-emerald-300 mt-0.5 shrink-0">
                           § {currentChapter.number}.{i + 1}
                         </span>
-                        <span className="flex-1 font-serif leading-snug text-ink/80 group-hover:text-bay">
+                        <span className="flex-1 font-serif leading-snug text-slate-200 group-hover:text-white">
                           {h.text}
                         </span>
                       </a>
@@ -396,10 +396,10 @@ export default function Reader() {
             </div>
 
             {/* Pied de tiroir : raccourci de fermeture */}
-            <div className="pt-4 mt-6 border-t border-stone-200/80 text-center">
+            <div className="pt-4 mt-6 border-t border-cyan-500/20 text-center">
               <button
                 onClick={() => setIsTocOpen(false)}
-                className="w-full py-3 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-xs font-sans font-medium text-ink/80 hover:text-ink transition-colors min-h-[44px]"
+                className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-tech text-slate-200 hover:text-white transition-colors min-h-[44px]"
               >
                 Fermer le sommaire
               </button>
@@ -408,28 +408,31 @@ export default function Reader() {
           </aside>
         </div>
 
-        {/* Corps du roman / Lecteur Markdown interactif avec mise en page "Beau Livre" (max-w-prose) */}
+        {/* Corps du roman / Lecteur Markdown interactif avec typographie optimale 68ch et console KaTeX */}
         <article
           ref={articleRef}
-          className={`reader-container bg-white/95 sm:bg-white rounded-3xl p-6 sm:p-12 lg:p-16 border border-stone-200/80 shadow-sm relative ${
+          className={`reader-container card-abyssal rounded-3xl p-6 sm:p-12 lg:p-16 border border-cyan-500/20 bg-slate-900/60 shadow-2xl relative ${
             fontFamily === 'serif' ? 'font-serif' : 'font-sans'
           }`}
         >
-          {/* Colonne de lecture centrée max-w-prose avec fond blanc naturel / papier chaud */}
-          <div className={`reader-prose max-w-prose mx-auto ${fontSizes[fontSize]} relative z-10 text-ink/90`}>
+          {/* Halo d'ambiance bioluminescent */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Conteneur de prose optimisé pour le confort de lecture (~68ch max) */}
+          <div className={`reader-prose max-w-[68ch] mx-auto ${fontSizes[fontSize]} relative z-10 text-slate-100`}>
             <ReactMarkdown
               remarkPlugins={[remarkMath]}
               rehypePlugins={[rehypeKatex, rehypeSlug]}
               components={{
                 h1: ({ node, ...props }) => (
-                  <header className="mb-10 pb-6 border-b border-stone-200">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-100 border border-stone-200/80 text-[11px] font-mono text-bay mb-4">
-                      <Radio className="w-3.5 h-3.5 text-dataBlue" />
+                  <header className="mb-10 pb-6 border-b border-cyan-500/25">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-[11px] font-tech text-cyan-300 mb-4">
+                      <Radio className="w-3.5 h-3.5 animate-pulse text-cyan-400" />
                       <span>MANUSCRIT // TRANSMISSION SOURCE : PORT-MYSTRAL</span>
                     </div>
                     <h1
                       id={props.id}
-                      className="font-serif font-bold text-2xl sm:text-4xl text-bay tracking-wide leading-tight scroll-mt-24"
+                      className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight leading-tight scroll-mt-24"
                       {...props}
                     />
                   </header>
@@ -441,71 +444,50 @@ export default function Reader() {
                   return (
                     <h2
                       id={id}
-                      className="scroll-mt-24 font-serif font-semibold text-bay text-xl sm:text-2xl border-b border-stone-200 pb-2 mt-12 mb-5 flex items-center gap-3 group"
+                      className="scroll-mt-24 text-xl sm:text-2xl font-bold text-white mt-12 mb-5 pb-3 border-b border-cyan-500/20 font-display flex items-center gap-3 group"
                       {...restProps}
                     >
-                      <span className="w-1.5 h-6 rounded-full bg-amberAccent inline-block group-hover:scale-y-125 transition-transform" />
-                      <span className="flex-1 text-bay group-hover:text-amberAccent transition-colors">
+                      <span className="w-2 h-6 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-400 inline-block shadow-[0_0_10px_rgba(34,211,238,0.5)] group-hover:scale-y-125 transition-transform" />
+                      <span className="flex-1 text-slate-100 group-hover:text-cyan-200 transition-colors">
                         {children}
                       </span>
                     </h2>
                   );
                 },
-                h3: ({ node, children, ...props }) => {
-                  const text = getNodeText(children);
-                  const id = slugify(text);
-                  const { id: _ignoredId, ...restProps } = props;
-                  return (
-                    <h3
-                      id={id}
-                      className="scroll-mt-24 font-serif font-semibold text-bay text-base sm:text-lg border-b border-stone-200 pb-2 mt-8 mb-4 flex items-center gap-2.5"
-                      {...restProps}
-                    >
-                      <Compass className="w-4 h-4 text-dataBlue shrink-0" />
-                      <span className="flex-1 text-bay">{children}</span>
-                    </h3>
-                  );
-                },
+                h3: ({ node, ...props }) => (
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-emerald-400 text-xs font-tech my-5 shadow-sm">
+                    <Compass className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
+                    <span {...props} />
+                  </div>
+                ),
                 blockquote: ({ node, ...props }) => (
                   <blockquote
-                    className="my-8 p-5 sm:p-6 rounded-2xl bg-stone-50/90 border-l-4 border-amberAccent text-ink/85 font-serif italic shadow-xs relative"
+                    className="my-8 p-5 sm:p-6 rounded-2xl bg-slate-950/80 border-l-4 border-cyan-400 text-slate-100 font-sans italic shadow-sm relative"
                   >
                     <div className="flex items-start gap-3">
-                      <Quote className="w-5 h-5 text-amberAccent shrink-0 mt-0.5" />
-                      <div className="flex-1 font-serif text-sm sm:text-base text-ink/85 leading-relaxed">
+                      <Quote className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                      <div className="flex-1 font-serif text-sm sm:text-base text-slate-200 leading-relaxed">
                         {props.children}
                       </div>
                     </div>
                   </blockquote>
                 ),
                 p: ({ node, ...props }) => (
-                  <p className="my-6 text-ink/90 font-serif leading-relaxed text-lg">
+                  <p className="my-6 text-slate-200 font-normal leading-relaxed sm:leading-loose">
                     {props.children}
                   </p>
                 ),
-                pre: ({ node, ...props }) => (
-                  <pre className="my-6 p-4 rounded-xl bg-stone-50 border border-stone-300 overflow-x-auto text-xs sm:text-sm font-mono text-dataBlue" {...props} />
-                ),
-                code: ({ node, inline, ...props }) => (
-                  inline ? (
-                    <code className="px-1.5 py-0.5 rounded-md bg-stone-100 border border-stone-200 text-xs font-mono text-bay" {...props} />
-                  ) : (
-                    <div className="overflow-x-auto my-4">
-                      <code className="font-mono text-sm" {...props} />
-                    </div>
-                  )
-                ),
                 strong: ({ node, ...props }) => (
-                  <strong className="text-ink font-semibold" {...props} />
+                  <strong className="text-white font-semibold" {...props} />
                 ),
                 em: ({ node, ...props }) => (
-                  <em className="text-ink/90 italic" {...props} />
+                  <em className="text-slate-100 italic" {...props} />
                 ),
                 hr: () => (
                   <div className="my-12 flex items-center justify-center gap-3">
-                    <div className="h-px bg-stone-200/80 flex-1" />
-                    <span className="w-2 h-2 rounded-full bg-amberAccent" />
-                    <div className="h-px bg-stone-200/80 flex-1" />
+                    <div className="h-px bg-cyan-500/20 flex-1" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-400/80 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+                    <div className="h-px bg-cyan-500/20 flex-1" />
                   </div>
                 ),
               }}
@@ -515,31 +497,31 @@ export default function Reader() {
           </div>
 
           {/* Séparateur de fin de chapitre */}
-          <div className="mt-14 pt-8 border-t border-stone-200/80 flex items-center justify-between text-xs font-mono text-ink/65">
+          <div className="mt-14 pt-8 border-t border-cyan-500/20 flex items-center justify-between text-xs font-tech text-slate-400">
             <span>FIN DU CHAPITRE {currentChapter.number}</span>
-            <span className="text-bay font-semibold">PORT-MYSTRAL // ARCHIMÈDE LAB</span>
+            <span className="text-cyan-400">PORT-MYSTRAL // ARCHIMÈDE LAB</span>
           </div>
 
           {/* Pagination en bas de page (cibles tactiles min 48px) */}
-          <div className="no-print mt-10 pt-6 border-t border-stone-200/80 flex items-center justify-between gap-4">
+          <div className="no-print mt-8 pt-6 border-t border-cyan-500/20 flex items-center justify-between gap-4">
             <button
               onClick={() => handleChapterChange(currentChapterIndex - 1)}
               disabled={currentChapterIndex === 0}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-stone-200/80 bg-white/90 hover:bg-stone-100 hover:border-bay/40 text-bay disabled:opacity-30 disabled:pointer-events-none transition-all font-sans text-xs sm:text-sm font-semibold min-h-[48px] shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-cyan-500/20 bg-slate-900/80 hover:bg-slate-800 text-slate-200 disabled:opacity-30 disabled:pointer-events-none transition-all font-tech text-xs sm:text-sm min-h-[48px]"
               title="Lire le chapitre précédent"
             >
-              <ChevronLeft className="w-4 h-4 text-bay" />
+              <ChevronLeft className="w-4 h-4" />
               <span>Chapitre précédent</span>
             </button>
 
-            <div className="text-center font-mono text-xs text-ink/70">
-              <span className="text-bay font-bold">Chapitre {currentChapter.number}</span> sur {chapters.length}
+            <div className="text-center font-tech text-xs text-slate-400">
+              <span className="text-cyan-400 font-bold">Chapitre {currentChapter.number}</span> sur {chapters.length}
             </div>
 
             <button
               onClick={() => handleChapterChange(currentChapterIndex + 1)}
               disabled={currentChapterIndex === chapters.length - 1}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amberAccent text-white hover:opacity-95 disabled:opacity-30 disabled:pointer-events-none transition-all font-sans text-xs sm:text-sm font-semibold shadow-md min-h-[48px]"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 disabled:opacity-30 disabled:pointer-events-none transition-all font-tech text-xs sm:text-sm font-semibold min-h-[48px]"
               title="Lire le chapitre suivant"
             >
               <span>Chapitre suivant</span>
@@ -548,13 +530,13 @@ export default function Reader() {
           </div>
 
           {/* Pied du composant avec boutons d'export (cibles tactiles min 48px) */}
-          <div className="no-print mt-8 pt-6 border-t border-stone-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div className="no-print mt-8 pt-6 border-t border-cyan-500/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             
             {/* Bouton 1 : Télécharger le PDF complet */}
             <a
               href="/roman-extrait.pdf"
               download="Leau-qui-accroche-Extrait-Roman.pdf"
-              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-sans text-xs sm:text-sm font-bold text-white bg-amberAccent hover:opacity-95 shadow-md transition-all transform hover:-translate-y-0.5 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-display text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-400 to-sky-400 hover:brightness-110 shadow-[0_0_18px_rgba(34,211,238,0.4)] transition-all transform hover:-translate-y-0.5 min-h-[48px]"
             >
               <FileDown className="w-4 h-4" />
               <span>Télécharger le PDF complet</span>
@@ -563,10 +545,10 @@ export default function Reader() {
             {/* Bouton 2 : Imprimer / Sauvegarder ce chapitre */}
             <button
               onClick={handlePrint}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-sans text-xs sm:text-sm font-semibold text-bay bg-white/90 hover:bg-stone-50 border border-stone-200/80 hover:border-bay/40 transition-all shadow-sm min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-tech text-xs font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-cyan-500/30 hover:border-emerald-400/40 transition-all shadow-sm min-h-[48px]"
               title="Ouvre la boîte d'impression ou d'enregistrement PDF du navigateur"
             >
-              <Printer className="w-4 h-4 text-bay" />
+              <Printer className="w-4 h-4 text-emerald-400" />
               <span>Imprimer / Sauvegarder ce chapitre</span>
             </button>
 

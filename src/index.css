@@ -3,93 +3,96 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
-/* Base Soft UI / Carnet de recherche tactile */
+/* Base stylée Abyssal Hard Sci-Fi */
 body {
-  background-color: #F5F1E8; /* bg-paper */
-  color: #1A2A33; /* text-ink */
+  background-color: #020617; /* bg-slate-950 */
+  color: #f8fafc; /* text-slate-50 pour WCAG AAA maximal */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
 
-/* Typographies thématiques du roman */
-.font-serif {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+/* Typographies thématiques */
+.font-display {
+  font-family: 'Orbitron', sans-serif;
 }
 
-.font-sans {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.font-mono, .font-tech {
+.font-tech {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.font-display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-}
-
-/* Scrollbar minérale douce */
+/* Scrollbar fine télémétrique */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F1E8;
+  background: #020617;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(214, 211, 209, 0.85); /* stone-300 */
+  background: rgba(6, 182, 212, 0.25);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 162, 158, 0.95); /* stone-400 */
+  background: rgba(6, 182, 212, 0.6);
 }
 
-/* Fiches carnet de recherche / Soft UI */
-.card-abyssal, .card-paper {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(231, 229, 228, 0.85); /* stone-200/85 */
-  box-shadow: 0 1px 3px 0 rgba(26, 42, 51, 0.04), 0 1px 2px -1px rgba(26, 42, 51, 0.04);
-  border-radius: 1rem;
+/* Lueurs bioluminescentes ciblées */
+.text-glow-cyan {
+  text-shadow: 0 0 16px rgba(34, 211, 238, 0.7), 0 0 32px rgba(6, 182, 212, 0.35);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 16px rgba(52, 211, 153, 0.7), 0 0 32px rgba(16, 185, 129, 0.35);
+}
+
+/* Cartes abyssales avec glassmorphism */
+.card-abyssal {
+  background: rgba(15, 23, 42, 0.6); /* bg-slate-900/60 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(6, 182, 212, 0.2); /* border-cyan-500/20 */
+  box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.9);
   transition: all 0.2s ease-in-out;
 }
 
-.card-abyssal:hover, .card-paper:hover {
-  border-color: rgba(214, 211, 209, 0.95);
-  box-shadow: 0 4px 12px -2px rgba(26, 42, 51, 0.06);
+.card-abyssal:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
 }
 
-/* Console d'observation KaTeX (style fiche de laboratoire claire / parchemin) */
+/* Console télémétrique KaTeX pour les équations scientifiques */
 .katex-display {
-  background: #FAF7F2 !important; /* fond légèrement bleuté/parchemin */
-  border: 1px solid #D6D3D1 !important; /* border-stone-300 */
-  border-left: 3px solid #1F4E5F !important; /* bay */
-  border-radius: 0.75rem !important;
+  background: rgba(2, 6, 23, 0.9) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+  border-left: 3px solid #22d3ee !important;
+  border-radius: 12px !important;
   padding: 1.25rem 1.5rem !important;
-  margin: 1.75rem 0 !important;
-  box-shadow: 0 1px 3px 0 rgba(26, 42, 51, 0.04) !important;
+  margin: 2rem 0 !important;
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.18), inset 0 0 15px rgba(6, 182, 212, 0.03) !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   text-align: center !important;
+  position: relative !important;
 }
 
 .katex {
   font-size: 1.15em !important;
-  color: #3D8B9E !important; /* dataBlue */
+  color: #22d3ee !important; /* cyan-400 */
 }
 
 .katex-display > .katex {
-  color: #1F4E5F !important; /* bay */
-  text-shadow: none !important;
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
 }
 
 /* Styles d'impression (@media print) */
 @media print {
   body, html {
     background: #ffffff !important;
-    color: #1A2A33 !important;
+    color: #0f172a !important;
   }
 
   header, footer, nav, #anomalie, #hero, #telechargement, #preuve, #protagonistes, .no-print, button, a[download] {
@@ -109,35 +112,40 @@ body {
     box-shadow: none !important;
     max-width: 100% !important;
     padding: 0 !important;
-    color: #1A2A33 !important;
+    color: #0f172a !important;
   }
 
   .reader-prose {
-    color: #1A2A33 !important;
+    color: #1e293b !important;
     font-size: 11pt !important;
     line-height: 1.6 !important;
   }
 
   .reader-prose h1, .reader-prose h2, .reader-prose h3 {
-    color: #1F4E5F !important;
-    border-bottom: 1px solid #e7e5e4 !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #cbd5e1 !important;
     page-break-after: avoid;
   }
 
   .reader-prose blockquote {
-    background: #fbf9f5 !important;
-    border-left: 3px solid #E8A33D !important;
-    color: #1A2A33 !important;
+    background: #f8fafc !important;
+    border-left: 4px solid #0284c7 !important;
+    color: #334155 !important;
     padding: 12px 18px !important;
     page-break-inside: avoid;
   }
 
   .katex-display {
-    background: #f5f5f4 !important;
-    border: 1px solid #d6d3d1 !important;
-    color: #1F4E5F !important;
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
     box-shadow: none !important;
     page-break-inside: avoid;
+    text-shadow: none !important;
+  }
+
+  .katex, .katex-display > .katex {
+    color: #0f172a !important;
     text-shadow: none !important;
   }
 }
