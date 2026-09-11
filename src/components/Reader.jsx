@@ -189,7 +189,7 @@ export default function Reader() {
                 Extrait officiel // Chapitre {currentChapter.number} : {currentChapter.title}
               </span>
               <span className="text-ink-muted text-xs font-sans">
-                {currentChapter.subtitle} // Roman Hard Sci-Fi YA
+                {currentChapter.subtitle} {currentChapter.readTime ? `• ~${currentChapter.readTime}` : ''}
               </span>
             </div>
           </div>
@@ -345,9 +345,16 @@ export default function Reader() {
                             {chap.title}
                           </span>
                         </div>
-                        <p className={`text-[11px] mt-1 line-clamp-1 font-sans ${isActive ? 'text-brick-100' : 'text-ink-muted'}`}>
-                          {chap.subtitle}
-                        </p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <p className={`text-[11px] line-clamp-1 font-sans ${isActive ? 'text-brick-100' : 'text-ink-muted'}`}>
+                            {chap.subtitle}
+                          </p>
+                          {chap.readTime && (
+                            <span className={`text-[10px] font-mono shrink-0 ${isActive ? 'text-white/80' : 'text-brick font-medium'}`}>
+                              • {chap.readTime}
+                            </span>
+                          )}
+                        </div>
                       </div>
                       {isActive && (
                         <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
