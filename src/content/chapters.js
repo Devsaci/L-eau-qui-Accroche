@@ -1,6 +1,7 @@
 import chapter1Raw from './chapitre1.md?raw';
 import chapter2Raw from './chapitre2.md?raw';
 import chapter3Raw from './chapitre3.md?raw';
+import chapter4Raw from './chapitre4.md?raw';
 
 export const chapters = [
   {
@@ -44,6 +45,20 @@ export const chapters = [
     path: "./chapitre3.md",
     synopsis: "Dans son atelier d'appentis, Théo met à l'épreuve l'échantillon de Luna : à 240 images par seconde, une bille d'acier accuse 0,32 seconde de retard. Face à l'aberration de la loi de Stokes, ils bravent le silence officiel pour porter leur mesure chez le Dr Archimède.",
     content: chapter3Raw,
+  },
+  {
+    id: 'chapitre-4',
+    slug: 'chapitre-4',
+    number: 4,
+    title: "Le bruit sous les mots",
+    subtitle: "L'avis d'Archimède & La parole médiatique",
+    act: "II",
+    actTitle: "Enquête",
+    readTime: "6 min",
+    readingTime: "6 min",
+    path: "./chapitre4.md",
+    synopsis: "Dans son laboratoire, le Dr Archimède valide l'anomalie des 0,32 s mais prévient : face à Élise Tamar, un chiffre sans explication sera balayé. Sur le port et devant le Bar de la Marine, le mot « limon » anesthésie déjà la ville : le combat se joue désormais dans le langage.",
+    content: chapter4Raw,
   }
 ];
 
