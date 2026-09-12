@@ -3,6 +3,7 @@ import chapter2Raw from './chapitre2.md?raw';
 import chapter3Raw from './chapitre3.md?raw';
 import chapter4Raw from './chapitre4.md?raw';
 import chapter5Raw from './chapitre5.md?raw';
+import chapter6Raw from './chapitre6.md?raw';
 
 export const chapters = [
   {
@@ -74,6 +75,20 @@ export const chapters = [
     path: "./chapitre5.md",
     synopsis: "Dans son atelier, Archimède constate avec un densimètre que la masse volumique est normale mais que la dynamique des fluides est brisée. Après avoir confessé sa lâcheté passée envers le grand-père de Luna, il leur confie un turbidimètre de terrain et un carnet de papier pour démonter l'argument du limon d'Élise Tamar.",
     content: chapter5Raw,
+  },
+  {
+    id: 'chapitre-6',
+    slug: 'chapitre-6',
+    number: 6,
+    title: "Une version acceptable",
+    subtitle: "La conférence de presse & Le carnet gris",
+    act: "II",
+    actTitle: "Enquête",
+    readTime: "8 min",
+    readingTime: "8 min",
+    path: "./chapitre6.md",
+    synopsis: "À la capitainerie, Élise Tamar impose sa version du limon d'équinoxe devant une ville rassurée par le mensonge. Rejetée par l'experte, Luna refuse de céder : dans l'ancien atelier de son grand-père, le frottement du graphite révèle une empreinte historique prouvant que la baie s'était déjà figée vingt ans plus tôt.",
+    content: chapter6Raw,
   }
 ];
 
