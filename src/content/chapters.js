@@ -2,6 +2,7 @@ import chapter1Raw from './chapitre1.md?raw';
 import chapter2Raw from './chapitre2.md?raw';
 import chapter3Raw from './chapitre3.md?raw';
 import chapter4Raw from './chapitre4.md?raw';
+import chapter5Raw from './chapitre5.md?raw';
 
 export const chapters = [
   {
@@ -59,6 +60,20 @@ export const chapters = [
     path: "./chapitre4.md",
     synopsis: "Dans son laboratoire, le Dr Archimède valide l'anomalie des 0,32 s mais prévient : face à Élise Tamar, un chiffre sans explication sera balayé. Sur le port et devant le Bar de la Marine, le mot « limon » anesthésie déjà la ville : le combat se joue désormais dans le langage.",
     content: chapter4Raw,
+  },
+  {
+    id: 'chapitre-5',
+    slug: 'chapitre-5',
+    number: 5,
+    title: "Le docteur Archimède ne répond pas…",
+    subtitle: "L'anomalie dynamique & Le turbidimètre",
+    act: "II",
+    actTitle: "Enquête",
+    readTime: "7 min",
+    readingTime: "7 min",
+    path: "./chapitre5.md",
+    synopsis: "Dans son atelier, Archimède constate avec un densimètre que la masse volumique est normale mais que la dynamique des fluides est brisée. Après avoir confessé sa lâcheté passée envers le grand-père de Luna, il leur confie un turbidimètre de terrain et un carnet de papier pour démonter l'argument du limon d'Élise Tamar.",
+    content: chapter5Raw,
   }
 ];
 
