@@ -8,6 +8,7 @@ import chapter7Raw from './chapitre7.md?raw';
 import chapter8Raw from './chapitre8.md?raw';
 import chapter9Raw from './chapitre9.md?raw';
 import chapter10Raw from './chapitre10.md?raw';
+import chapter11Raw from './chapitre11.md?raw';
 
 export const chapters = [
   {
@@ -149,6 +150,20 @@ export const chapters = [
     path: "./chapitre10.md",
     synopsis: "Guidée par sa grand-mère qui lui remet la clé de la remise, Luna exhume les carnets de 1994 de son aïeul. Avec Théo, ils découvrent que la pulsation n'est pas un mystère marin mais le spasme d'un vieux réseau de pompage dissimulé sous la fosse C3, dont la pression menace les scellés du Vieux Phare.",
     content: chapter10Raw,
+  },
+  {
+    id: 'chapitre-11',
+    slug: 'chapitre-11',
+    number: 11,
+    title: "La baie n’aime pas qu’on décide...",
+    subtitle: "L'intensification physique & Le mur institutionnel",
+    act: "IV",
+    actTitle: "L'Héritage",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre11.md",
+    synopsis: "En barque dans le secteur C2, Luna et Théo affrontent une eau bouillante à 28 °C et polymérisée en gelée sous leurs rames. Tandis que Tamar étouffe la panique sous l'alibi de poches de méthane et fait verrouiller le sentier des Douaniers par la mairie, les adolescents décident de s'infiltrer la nuit dans les grottes sous le Vieux Phare.",
+    content: chapter11Raw,
   }
 ];
 
