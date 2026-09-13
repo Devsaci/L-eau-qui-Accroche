@@ -4,6 +4,7 @@ import chapter3Raw from './chapitre3.md?raw';
 import chapter4Raw from './chapitre4.md?raw';
 import chapter5Raw from './chapitre5.md?raw';
 import chapter6Raw from './chapitre6.md?raw';
+import chapter7Raw from './chapitre7.md?raw';
 
 export const chapters = [
   {
@@ -89,6 +90,20 @@ export const chapters = [
     path: "./chapitre6.md",
     synopsis: "À la capitainerie, Élise Tamar impose sa version du limon d'équinoxe devant une ville rassurée par le mensonge. Rejetée par l'experte, Luna refuse de céder : dans l'ancien atelier de son grand-père, le frottement du graphite révèle une empreinte historique prouvant que la baie s'était déjà figée vingt ans plus tôt.",
     content: chapter6Raw,
+  },
+  {
+    id: 'chapitre-7',
+    slug: 'chapitre-7',
+    number: 7,
+    title: "Revenir avec une méthode",
+    subtitle: "Le Protocole Alpha & La Matrice de la baie",
+    act: "III",
+    actTitle: "Résistance",
+    readTime: "8 min",
+    readingTime: "8 min",
+    path: "./chapitre7.md",
+    synopsis: "Réfugiés dans l'annexe oubliée d'Archimède, Luna et Théo transforment leur trouble en rigueur scientifique : division cartographique de la baie en 16 secteurs et premier prélèvement nocturne sous le belvédère de la mairie, où l'eau résiste au goulot malgré le froid.",
+    content: chapter7Raw,
   }
 ];
 
