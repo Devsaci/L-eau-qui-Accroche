@@ -18,6 +18,7 @@ import chapter17Raw from './chapitre17.md?raw';
 import chapter18Raw from './chapitre18.md?raw';
 import chapter19Raw from './chapitre19.md?raw';
 import chapter20Raw from './chapitre20.md?raw';
+import chapter21Raw from './chapitre21.md?raw';
 
 export const chapters = [
   {
@@ -299,6 +300,20 @@ export const chapters = [
     path: "./chapitre20.md",
     synopsis: "En superposant le carnet de 1986 et ses relevés récents, Luna isole la constante critique des douze minutes et localise le foyer de l'adhérence entre la balise 4 et le récif des Pendus. Rejoint par Théo converti par l'évidence statistique, le duo conçoit avec le Dr Archimède un dispositif de mesure par dynamomètre et GPS pour arracher à la baie une preuve indiscutable.",
     content: chapter20Raw,
+  },
+  {
+    id: 'chapitre-21',
+    slug: 'chapitre-21',
+    number: 21,
+    title: "Ce qu’il faut risquer pour vérifier",
+    subtitle: "La levée des doutes techniques & La convergence vers la baie",
+    act: "VII",
+    actTitle: "La Résonance",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre21.md",
+    synopsis: "Dans l'atelier d'Archimède, Théo dépasse ses réticences méthodologiques pour verrouiller le Capteur de Résistance Différentielle. Munie du dernier calque de 1996 transmis par sa grand-mère attestant la mémoire de forme de l'eau, Luna embarque de nuit avec Théo et Archimède sur la Méthode, bravant la surveillance de la gendarmerie et les caméras de Tamar pour mesurer l'anomalie en plein coefficient 108.",
+    content: chapter21Raw,
   }
 ];
 
