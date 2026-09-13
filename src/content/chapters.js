@@ -9,6 +9,7 @@ import chapter8Raw from './chapitre8.md?raw';
 import chapter9Raw from './chapitre9.md?raw';
 import chapter10Raw from './chapitre10.md?raw';
 import chapter11Raw from './chapitre11.md?raw';
+import chapter12Raw from './chapitre12.md?raw';
 
 export const chapters = [
   {
@@ -164,6 +165,20 @@ export const chapters = [
     path: "./chapitre11.md",
     synopsis: "En barque dans le secteur C2, Luna et Théo affrontent une eau bouillante à 28 °C et polymérisée en gelée sous leurs rames. Tandis que Tamar étouffe la panique sous l'alibi de poches de méthane et fait verrouiller le sentier des Douaniers par la mairie, les adolescents décident de s'infiltrer la nuit dans les grottes sous le Vieux Phare.",
     content: chapter11Raw,
+  },
+  {
+    id: 'chapitre-12',
+    slug: 'chapitre-12',
+    number: 12,
+    title: "Tamar parle pour tout le monde",
+    subtitle: "Le choc des discours & La décision nocturne",
+    act: "IV",
+    actTitle: "L'Héritage",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre12.md",
+    synopsis: "Devant une salle comble et soulagée, Élise Tamar impose sa thèse rassurante d'un simple dégazage de vase et balaye l'objection d'Archimède. Ridiculisée au collège et confrontée au doute de Théo menacé par Morel, Luna maintient le cap : dans la nuit, Théo la rejoint à l'annexe pour braver l'interdit et s'infiltrer sous le Vieux Phare.",
+    content: chapter12Raw,
   }
 ];
 
