@@ -10,6 +10,7 @@ import chapter9Raw from './chapitre9.md?raw';
 import chapter10Raw from './chapitre10.md?raw';
 import chapter11Raw from './chapitre11.md?raw';
 import chapter12Raw from './chapitre12.md?raw';
+import chapter13Raw from './chapitre13.md?raw';
 
 export const chapters = [
   {
@@ -179,6 +180,20 @@ export const chapters = [
     path: "./chapitre12.md",
     synopsis: "Devant une salle comble et soulagée, Élise Tamar impose sa thèse rassurante d'un simple dégazage de vase et balaye l'objection d'Archimède. Ridiculisée au collège et confrontée au doute de Théo menacé par Morel, Luna maintient le cap : dans la nuit, Théo la rejoint à l'annexe pour braver l'interdit et s'infiltrer sous le Vieux Phare.",
     content: chapter12Raw,
+  },
+  {
+    id: 'chapitre-13',
+    slug: 'chapitre-13',
+    number: 13,
+    title: "Tenir les faits",
+    subtitle: "L'interface souterraine & Le tri entre peur et indice",
+    act: "V",
+    actTitle: "La Preuve",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre13.md",
+    synopsis: "Infiltrés sous les scellés du Vieux Phare à marée basse, Luna et Théo pénètrent dans la salle des machines fantôme et constatent un rejet d'eau bouillante à 32 °C. Pris en chasse par Morel, ils fuient par le conduit de décharge submergé et capturent au péril de leur vie la fréquence de 15 Hz de la pompe Goliath.",
+    content: chapter13Raw,
   }
 ];
 
