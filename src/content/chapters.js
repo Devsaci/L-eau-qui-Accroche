@@ -13,6 +13,7 @@ import chapter12Raw from './chapitre12.md?raw';
 import chapter13Raw from './chapitre13.md?raw';
 import chapter14Raw from './chapitre14.md?raw';
 import chapter15Raw from './chapitre15.md?raw';
+import chapter16Raw from './chapitre16.md?raw';
 
 export const chapters = [
   {
@@ -224,6 +225,20 @@ export const chapters = [
     path: "./chapitre15.md",
     synopsis: "À 02h12 lors de l'équinoxe de coefficient 104 sur le récif des Brumes, Luna et Théo filment le jet thermique à 34 °C de la pompe Goliath et prélèvent un échantillon opalin fumant. Traqués par Morel et son quad, ils fuient par le sentier submergé pour mettre la preuve à l'abri dans la caisse en zinc du grand-père.",
     content: chapter15Raw,
+  },
+  {
+    id: 'chapitre-16',
+    slug: 'chapitre-16',
+    number: 16,
+    title: "Archimède reformule la question",
+    subtitle: "L'arme sans manche & L'étau se resserre",
+    act: "VI",
+    actTitle: "L'Affrontement",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre16.md",
+    synopsis: "Dans son atelier, Archimède confirme le jet industriel à 34 °C et 15 Hz mais refuse l'éclat immédiat : une vérité brute sans stratégie ferait d'eux des coupables. Tandis qu'il les pousse à traquer le « pourquoi » du secret de 1996, un appel retentit : Élise Tamar s'est installée dans le salon de la grand-mère de Luna pour étouffer l'affaire.",
+    content: chapter16Raw,
   }
 ];
 
