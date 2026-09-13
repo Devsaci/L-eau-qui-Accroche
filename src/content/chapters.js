@@ -14,6 +14,7 @@ import chapter13Raw from './chapitre13.md?raw';
 import chapter14Raw from './chapitre14.md?raw';
 import chapter15Raw from './chapitre15.md?raw';
 import chapter16Raw from './chapitre16.md?raw';
+import chapter17Raw from './chapitre17.md?raw';
 
 export const chapters = [
   {
@@ -239,6 +240,20 @@ export const chapters = [
     path: "./chapitre16.md",
     synopsis: "Dans son atelier, Archimède confirme le jet industriel à 34 °C et 15 Hz mais refuse l'éclat immédiat : une vérité brute sans stratégie ferait d'eux des coupables. Tandis qu'il les pousse à traquer le « pourquoi » du secret de 1996, un appel retentit : Élise Tamar s'est installée dans le salon de la grand-mère de Luna pour étouffer l'affaire.",
     content: chapter16Raw,
+  },
+  {
+    id: 'chapitre-17',
+    slug: 'chapitre-17',
+    number: 17,
+    title: "Bascule personnelle",
+    subtitle: "La rupture du duo & Le poste de guet de la Pointe-Noire",
+    act: "VI",
+    actTitle: "L'Affrontement",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre17.md",
+    synopsis: "Refusant le compromis méthodologique de Théo qui remet son carnet à Tamar pour rentrer dans le rang, Luna affronte publiquement l'experte sur le port. Traitée d'orpheline instable en plein deuil, Luna trouve le soutien inattendu de sa grand-mère qui lui remet la clé secrète du poste de guet de la Pointe-Noire.",
+    content: chapter17Raw,
   }
 ];
 
