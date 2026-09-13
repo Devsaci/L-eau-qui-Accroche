@@ -339,7 +339,7 @@ export default function Reader() {
                           <span className={`text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded ${
                             isActive ? 'bg-white/20 text-white' : 'bg-paper text-ink-muted'
                           }`}>
-                            Chapitre {chap.number}
+                            {chap.isEpilogue ? 'Épilogue' : `Chapitre ${chap.number}`}
                           </span>
                           <span className={`text-xs font-semibold font-serif ${isActive ? 'text-white' : 'text-ink'}`}>
                             {chap.title}
@@ -369,7 +369,7 @@ export default function Reader() {
             <div className="mt-8 flex-1">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-[11px] font-mono text-ink-muted uppercase tracking-wider font-semibold">
-                  Sections du Chapitre {currentChapter.number} ({headings.length})
+                  {currentChapter.isEpilogue ? 'Sections de l’Épilogue' : `Sections du Chapitre ${currentChapter.number}`} ({headings.length})
                 </span>
                 <span className="text-[10px] text-brick font-mono font-medium">
                   Navigation directe
@@ -390,7 +390,7 @@ export default function Reader() {
                         className="w-full text-left p-3 rounded-xl bg-paper-card hover:bg-white border border-brick/15 hover:border-brick/30 text-xs text-ink-light hover:text-brick transition-all flex items-start gap-3 group min-h-[48px] shadow-paper"
                       >
                         <span className="text-[11px] font-mono text-brick font-semibold mt-0.5 shrink-0">
-                          § {currentChapter.number}.{i + 1}
+                          § {currentChapter.isEpilogue ? `E.${i + 1}` : `${currentChapter.number}.${i + 1}`}
                         </span>
                         <span className="flex-1 font-serif leading-snug text-ink group-hover:text-brick">
                           {h.text}
@@ -502,7 +502,7 @@ export default function Reader() {
 
           {/* Séparateur de fin de chapitre */}
           <div className="mt-14 pt-8 border-t border-brick/15 flex items-center justify-between text-xs font-mono text-ink-muted">
-            <span>FIN DU CHAPITRE {currentChapter.number}</span>
+            <span>{currentChapter.isEpilogue ? 'FIN DU MANUSCRIT // ÉPILOGUE' : `FIN DU CHAPITRE ${currentChapter.number}`}</span>
             <span className="text-brick font-semibold">PORT-MYSTRAL // ARCHIMÈDE LAB</span>
           </div>
 
@@ -519,7 +519,7 @@ export default function Reader() {
             </button>
 
             <div className="text-center font-mono text-xs text-ink-muted">
-              <span className="text-brick font-bold">Chapitre {currentChapter.number}</span> sur {chapters.length}
+              <span className="text-brick font-bold">{currentChapter.isEpilogue ? 'Épilogue' : `Chapitre ${currentChapter.number}`}</span> sur {chapters.length}
             </div>
 
             <button
@@ -528,7 +528,7 @@ export default function Reader() {
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-brick bg-brick hover:bg-rust text-white disabled:opacity-30 disabled:pointer-events-none transition-all font-mono text-xs sm:text-sm font-semibold min-h-[48px] shadow-brick-soft"
               title="Lire le chapitre suivant"
             >
-              <span>Chapitre suivant</span>
+              <span>{chapters[currentChapterIndex + 1]?.isEpilogue ? 'Lire l’Épilogue' : 'Chapitre suivant'}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>

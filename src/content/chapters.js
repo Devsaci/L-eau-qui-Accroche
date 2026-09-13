@@ -22,6 +22,7 @@ import chapter21Raw from './chapitre21.md?raw';
 import chapter22Raw from './chapitre22.md?raw';
 import chapter23Raw from './chapitre23.md?raw';
 import chapter24Raw from './chapitre24.md?raw';
+import epilogueRaw from './epilogue.md?raw';
 
 export const chapters = [
   {
@@ -359,6 +360,21 @@ export const chapters = [
     path: "./chapitre24.md",
     synopsis: "Dans la salle de réunion de la mairie, Luna, Théo et le Dr Archimède confrontent Élise Tamar aux côtés du Pr Chen. Face à la preuve statistique d'une viscosité multipliée par quatre sur huit capteurs et à la fiole d'eau à mémoire de tension, l'experte capitule et acte la reconnaissance officielle d'une Anomalie de Tension Locale. Sur la digue réconciliée au crépuscule, Luna et sa grand-mère scellent l'héritage d'une vérité désormais nommée et durable.",
     content: chapter24Raw,
+  },
+  {
+    id: 'epilogue',
+    slug: 'epilogue',
+    number: "Épilogue",
+    title: "Ce que l’eau garde",
+    subtitle: "L’horizon comme sillage & La mémoire du large",
+    act: "VIII",
+    actTitle: "La Manifestation",
+    readTime: "4 min",
+    readingTime: "4 min",
+    isEpilogue: true,
+    path: "./epilogue.md",
+    synopsis: "Sur le vieux muret de pierre de Port-Mystral, Luna et Théo préparent leurs prochaines observations pour les grandes marées à venir sous le regard bienveillant de la grand-mère. En lançant un galet vers l'onde où s'étire encore un courant invisible, Luna scelle la victoire de l'attention et de la justesse : la baie n'a plus besoin d'être combattue, elle est devenue une vérité partagée que le temps ne pourra plus effacer.",
+    content: epilogueRaw,
   }
 ];
 
