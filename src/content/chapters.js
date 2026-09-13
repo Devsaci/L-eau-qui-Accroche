@@ -17,6 +17,7 @@ import chapter16Raw from './chapitre16.md?raw';
 import chapter17Raw from './chapitre17.md?raw';
 import chapter18Raw from './chapitre18.md?raw';
 import chapter19Raw from './chapitre19.md?raw';
+import chapter20Raw from './chapitre20.md?raw';
 
 export const chapters = [
   {
@@ -284,6 +285,20 @@ export const chapters = [
     path: "./chapitre19.md",
     synopsis: "Devant le naufrage de leur enquête étouffée par le discours officiel de Tamar, Luna comprend grâce aux notes de 1974 que le phénomène est latent : il faut le convoquer par résonance plutôt que de l'attendre. Soutenue par sa grand-mère, elle retrouve Théo au Vieux-Môle pour sceller leur ré-alliance et pirater les balises du port.",
     content: chapter19Raw,
+  },
+  {
+    id: 'chapitre-20',
+    slug: 'chapitre-20',
+    number: 20,
+    title: "Les pièces se rejoignent",
+    subtitle: "La relecture finale des traces & Le dispositif de preuve",
+    act: "VII",
+    actTitle: "La Résonance",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre20.md",
+    synopsis: "En superposant le carnet de 1986 et ses relevés récents, Luna isole la constante critique des douze minutes et localise le foyer de l'adhérence entre la balise 4 et le récif des Pendus. Rejoint par Théo converti par l'évidence statistique, le duo conçoit avec le Dr Archimède un dispositif de mesure par dynamomètre et GPS pour arracher à la baie une preuve indiscutable.",
+    content: chapter20Raw,
   }
 ];
 
