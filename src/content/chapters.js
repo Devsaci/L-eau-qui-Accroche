@@ -6,6 +6,7 @@ import chapter5Raw from './chapitre5.md?raw';
 import chapter6Raw from './chapitre6.md?raw';
 import chapter7Raw from './chapitre7.md?raw';
 import chapter8Raw from './chapitre8.md?raw';
+import chapter9Raw from './chapitre9.md?raw';
 
 export const chapters = [
   {
@@ -119,6 +120,20 @@ export const chapters = [
     path: "./chapitre8.md",
     synopsis: "Épuisés par les prélèvements nocturnes de la Matrice, Luna et Théo découvrent que l'adhérence n'est pas aléatoire : elle suit une sinusoïde périodique de 12 minutes émanant de la fosse C3. Mais à l'aube, la grand-mère et la radio de Tamar opposent l'argument violent de la suggestion collective.",
     content: chapter8Raw,
+  },
+  {
+    id: 'chapitre-9',
+    slug: 'chapitre-9',
+    number: 9,
+    title: "Une hypothèse trop simple",
+    subtitle: "L'épreuve de la digue & La rupture du modèle",
+    act: "III",
+    actTitle: "Résistance",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre9.md",
+    synopsis: "Persuadé d'avoir dompté l'anomalie grâce à un modèle de résonance en cloche inversée au point C3, Théo tente une prédiction à la seconde près sur la digue de l'Est. L'échec cinglant et l'apparition d'une eau abrasive et chaotique forcent le duo à abandonner la mécanique simpliste pour explorer la géologie profonde.",
+    content: chapter9Raw,
   }
 ];
 
