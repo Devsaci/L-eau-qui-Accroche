@@ -19,6 +19,7 @@ import chapter18Raw from './chapitre18.md?raw';
 import chapter19Raw from './chapitre19.md?raw';
 import chapter20Raw from './chapitre20.md?raw';
 import chapter21Raw from './chapitre21.md?raw';
+import chapter22Raw from './chapitre22.md?raw';
 
 export const chapters = [
   {
@@ -314,6 +315,20 @@ export const chapters = [
     path: "./chapitre21.md",
     synopsis: "Dans l'atelier d'Archimède, Théo dépasse ses réticences méthodologiques pour verrouiller le Capteur de Résistance Différentielle. Munie du dernier calque de 1996 transmis par sa grand-mère attestant la mémoire de forme de l'eau, Luna embarque de nuit avec Théo et Archimède sur la Méthode, bravant la surveillance de la gendarmerie et les caméras de Tamar pour mesurer l'anomalie en plein coefficient 108.",
     content: chapter21Raw,
+  },
+  {
+    id: 'chapitre-22',
+    slug: 'chapitre-22',
+    number: 22,
+    title: "Là où l’eau tient",
+    subtitle: "L'approche du seuil & La manifestation irréfutable",
+    act: "VIII",
+    actTitle: "La Manifestation",
+    readTime: "11 min",
+    readingTime: "11 min",
+    path: "./chapitre22.md",
+    synopsis: "Descendus sur l'affleurement rocheux sous la digue nord, Luna, Théo et Archimède affrontent la marée montante. Témoin direct d'une vague noire qui s'élève comme un mur de verre et la cloue au sol par des filaments d'adhérence moléculaire sous les yeux d'Élise Tamar médusée, Luna soutient l'épreuve jusqu'à la rupture cristalline : la mesure physique est scellée, et le silence institutionnel définitivement rompu.",
+    content: chapter22Raw,
   }
 ];
 
