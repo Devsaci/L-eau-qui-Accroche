@@ -324,16 +324,28 @@ export default function Reader() {
               <div className="space-y-2.5">
                 {chapters.map((chap, idx) => {
                   const isActive = idx === currentChapterIndex;
+                  const isFirstOfAct = idx === 0 || chapters[idx - 1].act !== chap.act;
                   return (
-                    <button
-                      key={chap.id}
-                      onClick={() => handleChapterChange(idx)}
-                      className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-start justify-between gap-3 min-h-[48px] ${
-                        isActive
-                          ? 'bg-brick text-white border-brick shadow-brick-soft'
-                          : 'bg-paper-card border-brick/15 text-ink hover:border-brick/30 hover:bg-white shadow-paper'
-                      }`}
-                    >
+                    <React.Fragment key={chap.id}>
+                      {isFirstOfAct && (
+                        <div className="pt-4 pb-1.5 border-b border-brick/20 flex items-center justify-between text-[11px] font-mono font-bold tracking-wider text-brick">
+                          <span className="flex items-center gap-1.5">
+                            <Compass className="w-3.5 h-3.5 text-rust" />
+                            {chap.act} : {chap.actTitle}
+                          </span>
+                          <span className="text-[10px] text-ink-muted font-normal">
+                            {chap.act === 'Acte I' ? 'Ch. 1-6' : chap.act === 'Acte II' ? 'Ch. 7-18' : 'Ch. 19-Épilogue'}
+                          </span>
+                        </div>
+                      )}
+                      <button
+                        onClick={() => handleChapterChange(idx)}
+                        className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-start justify-between gap-3 min-h-[48px] ${
+                          isActive
+                            ? 'bg-brick text-white border-brick shadow-brick-soft'
+                            : 'bg-paper-card border-brick/15 text-ink hover:border-brick/30 hover:bg-white shadow-paper'
+                        }`}
+                      >
                       <div>
                         <div className="flex items-center gap-2">
                           <span className={`text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded ${
@@ -360,6 +372,7 @@ export default function Reader() {
                         <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                       )}
                     </button>
+                    </React.Fragment>
                   );
                 })}
               </div>
@@ -432,7 +445,7 @@ export default function Reader() {
                   <header className="mb-10 pb-6 border-b border-brick/15">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brick-50 border border-brick/20 text-[11px] font-mono text-brick mb-4">
                       <Radio className="w-3.5 h-3.5 text-brick" />
-                      <span>MANUSCRIT // CARNET D'OBSERVATION : PORT-MYSTRAL</span>
+                      <span>{currentChapter.act} : {currentChapter.actTitle} // PORT-MYSTRAL</span>
                     </div>
                     <h1
                       id={props.id}
