@@ -11,6 +11,7 @@ import chapter10Raw from './chapitre10.md?raw';
 import chapter11Raw from './chapitre11.md?raw';
 import chapter12Raw from './chapitre12.md?raw';
 import chapter13Raw from './chapitre13.md?raw';
+import chapter14Raw from './chapitre14.md?raw';
 
 export const chapters = [
   {
@@ -194,6 +195,20 @@ export const chapters = [
     path: "./chapitre13.md",
     synopsis: "Infiltrés sous les scellés du Vieux Phare à marée basse, Luna et Théo pénètrent dans la salle des machines fantôme et constatent un rejet d'eau bouillante à 32 °C. Pris en chasse par Morel, ils fuient par le conduit de décharge submergé et capturent au péril de leur vie la fréquence de 15 Hz de la pompe Goliath.",
     content: chapter13Raw,
+  },
+  {
+    id: 'chapitre-14',
+    slug: 'chapitre-14',
+    number: 14,
+    title: "Les zones qu’on contourne",
+    subtitle: "La mémoire effacée & La limite de la preuve",
+    act: "V",
+    actTitle: "La Preuve",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre14.md",
+    synopsis: "En croisant le cadastre de 1992 et l'accident de 1996, Luna et Théo découvrent que la fondation Tamar utilise la baie comme radiateur clandestin pour stabiliser les fondations de la ville. Face au scepticisme municipal, Archimède leur confie une caméra thermique pour capturer le jet à 32 °C au récif des Brumes lors de la marée d'équinoxe de coefficient 104.",
+    content: chapter14Raw,
   }
 ];
 
