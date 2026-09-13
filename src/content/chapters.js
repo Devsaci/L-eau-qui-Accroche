@@ -7,6 +7,7 @@ import chapter6Raw from './chapitre6.md?raw';
 import chapter7Raw from './chapitre7.md?raw';
 import chapter8Raw from './chapitre8.md?raw';
 import chapter9Raw from './chapitre9.md?raw';
+import chapter10Raw from './chapitre10.md?raw';
 
 export const chapters = [
   {
@@ -134,6 +135,20 @@ export const chapters = [
     path: "./chapitre9.md",
     synopsis: "Persuadé d'avoir dompté l'anomalie grâce à un modèle de résonance en cloche inversée au point C3, Théo tente une prédiction à la seconde près sur la digue de l'Est. L'échec cinglant et l'apparition d'une eau abrasive et chaotique forcent le duo à abandonner la mécanique simpliste pour explorer la géologie profonde.",
     content: chapter9Raw,
+  },
+  {
+    id: 'chapitre-10',
+    slug: 'chapitre-10',
+    number: 10,
+    title: "Ce que les grands-parents savaient...",
+    subtitle: "Le Journal de bord du fond & L'infrastructure fantôme",
+    act: "IV",
+    actTitle: "L'Héritage",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre10.md",
+    synopsis: "Guidée par sa grand-mère qui lui remet la clé de la remise, Luna exhume les carnets de 1994 de son aïeul. Avec Théo, ils découvrent que la pulsation n'est pas un mystère marin mais le spasme d'un vieux réseau de pompage dissimulé sous la fosse C3, dont la pression menace les scellés du Vieux Phare.",
+    content: chapter10Raw,
   }
 ];
 
