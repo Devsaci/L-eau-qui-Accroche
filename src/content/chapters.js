@@ -20,6 +20,7 @@ import chapter19Raw from './chapitre19.md?raw';
 import chapter20Raw from './chapitre20.md?raw';
 import chapter21Raw from './chapitre21.md?raw';
 import chapter22Raw from './chapitre22.md?raw';
+import chapter23Raw from './chapitre23.md?raw';
 
 export const chapters = [
   {
@@ -329,6 +330,20 @@ export const chapters = [
     path: "./chapitre22.md",
     synopsis: "Descendus sur l'affleurement rocheux sous la digue nord, Luna, Théo et Archimède affrontent la marée montante. Témoin direct d'une vague noire qui s'élève comme un mur de verre et la cloue au sol par des filaments d'adhérence moléculaire sous les yeux d'Élise Tamar médusée, Luna soutient l'épreuve jusqu'à la rupture cristalline : la mesure physique est scellée, et le silence institutionnel définitivement rompu.",
     content: chapter22Raw,
+  },
+  {
+    id: 'chapitre-23',
+    slug: 'chapitre-23',
+    number: 23,
+    title: "Ce qui peut enfin être dit",
+    subtitle: "La redistribution du savoir & L'alliance scellée",
+    act: "VIII",
+    actTitle: "La Manifestation",
+    readTime: "11 min",
+    readingTime: "11 min",
+    path: "./chapitre23.md",
+    synopsis: "Sur le quai n°4 où une chaîne reste suspendue à 45 degrés dans l'eau immobile, Luna et Théo imposent leurs relevés physiques à Élise Tamar face aux témoins. Lors d'un tête-à-tête sans fard à la capitainerie, l'experte capitule et intègre les données à son rapport officiel, avant que le laboratoire du Pr Chen ne valide la rupture de continuité : l'alliance entre mémoire, méthode et vérité est définitivement scellée.",
+    content: chapter23Raw,
   }
 ];
 
