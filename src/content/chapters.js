@@ -16,6 +16,7 @@ import chapter15Raw from './chapitre15.md?raw';
 import chapter16Raw from './chapitre16.md?raw';
 import chapter17Raw from './chapitre17.md?raw';
 import chapter18Raw from './chapitre18.md?raw';
+import chapter19Raw from './chapitre19.md?raw';
 
 export const chapters = [
   {
@@ -269,6 +270,20 @@ export const chapters = [
     path: "./chapitre18.md",
     synopsis: "Dans le bureau de Tamar, Théo refuse d'authentifier les relevés historiques de 1974 par peur du discrédit. Trahie par la capitainerie et isolée, Luna franchit seule la zone interdite de la Pointe-Noire sous la pluie : face aux vagues de sirop noir et au dôme vitreux, elle choisit l'abri clandestin et devient elle-même la preuve.",
     content: chapter18Raw,
+  },
+  {
+    id: 'chapitre-19',
+    slug: 'chapitre-19',
+    number: 19,
+    title: "Il n’y a plus de version simple",
+    subtitle: "Le constat des décombres & La ré-alliance",
+    act: "VII",
+    actTitle: "La Résonance",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre19.md",
+    synopsis: "Devant le naufrage de leur enquête étouffée par le discours officiel de Tamar, Luna comprend grâce aux notes de 1974 que le phénomène est latent : il faut le convoquer par résonance plutôt que de l'attendre. Soutenue par sa grand-mère, elle retrouve Théo au Vieux-Môle pour sceller leur ré-alliance et pirater les balises du port.",
+    content: chapter19Raw,
   }
 ];
 
