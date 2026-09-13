@@ -21,6 +21,7 @@ import chapter20Raw from './chapitre20.md?raw';
 import chapter21Raw from './chapitre21.md?raw';
 import chapter22Raw from './chapitre22.md?raw';
 import chapter23Raw from './chapitre23.md?raw';
+import chapter24Raw from './chapitre24.md?raw';
 
 export const chapters = [
   {
@@ -344,6 +345,20 @@ export const chapters = [
     path: "./chapitre23.md",
     synopsis: "Sur le quai n°4 où une chaîne reste suspendue à 45 degrés dans l'eau immobile, Luna et Théo imposent leurs relevés physiques à Élise Tamar face aux témoins. Lors d'un tête-à-tête sans fard à la capitainerie, l'experte capitule et intègre les données à son rapport officiel, avant que le laboratoire du Pr Chen ne valide la rupture de continuité : l'alliance entre mémoire, méthode et vérité est définitivement scellée.",
     content: chapter23Raw,
+  },
+  {
+    id: 'chapitre-24',
+    slug: 'chapitre-24',
+    number: 24,
+    title: "La discipline du regard",
+    subtitle: "L’épreuve de la recevabilité & Ce qui demeure",
+    act: "VIII",
+    actTitle: "La Manifestation",
+    readTime: "12 min",
+    readingTime: "12 min",
+    path: "./chapitre24.md",
+    synopsis: "Dans la salle de réunion de la mairie, Luna, Théo et le Dr Archimède confrontent Élise Tamar aux côtés du Pr Chen. Face à la preuve statistique d'une viscosité multipliée par quatre sur huit capteurs et à la fiole d'eau à mémoire de tension, l'experte capitule et acte la reconnaissance officielle d'une Anomalie de Tension Locale. Sur la digue réconciliée au crépuscule, Luna et sa grand-mère scellent l'héritage d'une vérité désormais nommée et durable.",
+    content: chapter24Raw,
   }
 ];
 
