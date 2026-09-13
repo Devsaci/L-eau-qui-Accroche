@@ -15,6 +15,7 @@ import chapter14Raw from './chapitre14.md?raw';
 import chapter15Raw from './chapitre15.md?raw';
 import chapter16Raw from './chapitre16.md?raw';
 import chapter17Raw from './chapitre17.md?raw';
+import chapter18Raw from './chapitre18.md?raw';
 
 export const chapters = [
   {
@@ -254,6 +255,20 @@ export const chapters = [
     path: "./chapitre17.md",
     synopsis: "Refusant le compromis méthodologique de Théo qui remet son carnet à Tamar pour rentrer dans le rang, Luna affronte publiquement l'experte sur le port. Traitée d'orpheline instable en plein deuil, Luna trouve le soutien inattendu de sa grand-mère qui lui remet la clé secrète du poste de guet de la Pointe-Noire.",
     content: chapter17Raw,
+  },
+  {
+    id: 'chapitre-18',
+    slug: 'chapitre-18',
+    number: 18,
+    title: "La contradiction de trop",
+    subtitle: "L'asphyxie de la preuve & Le point de non-retour",
+    act: "VI",
+    actTitle: "L'Affrontement",
+    readTime: "10 min",
+    readingTime: "10 min",
+    path: "./chapitre18.md",
+    synopsis: "Dans le bureau de Tamar, Théo refuse d'authentifier les relevés historiques de 1974 par peur du discrédit. Trahie par la capitainerie et isolée, Luna franchit seule la zone interdite de la Pointe-Noire sous la pluie : face aux vagues de sirop noir et au dôme vitreux, elle choisit l'abri clandestin et devient elle-même la preuve.",
+    content: chapter18Raw,
   }
 ];
 
