@@ -5,6 +5,7 @@ import chapter4Raw from './chapitre4.md?raw';
 import chapter5Raw from './chapitre5.md?raw';
 import chapter6Raw from './chapitre6.md?raw';
 import chapter7Raw from './chapitre7.md?raw';
+import chapter8Raw from './chapitre8.md?raw';
 
 export const chapters = [
   {
@@ -104,6 +105,20 @@ export const chapters = [
     path: "./chapitre7.md",
     synopsis: "Réfugiés dans l'annexe oubliée d'Archimède, Luna et Théo transforment leur trouble en rigueur scientifique : division cartographique de la baie en 16 secteurs et premier prélèvement nocturne sous le belvédère de la mairie, où l'eau résiste au goulot malgré le froid.",
     content: chapter7Raw,
+  },
+  {
+    id: 'chapitre-8',
+    slug: 'chapitre-8',
+    number: 8,
+    title: "Ce qui se répète, ce qui change",
+    subtitle: "La pulsation de douze minutes & L'alerte sociale",
+    act: "III",
+    actTitle: "Résistance",
+    readTime: "9 min",
+    readingTime: "9 min",
+    path: "./chapitre8.md",
+    synopsis: "Épuisés par les prélèvements nocturnes de la Matrice, Luna et Théo découvrent que l'adhérence n'est pas aléatoire : elle suit une sinusoïde périodique de 12 minutes émanant de la fosse C3. Mais à l'aube, la grand-mère et la radio de Tamar opposent l'argument violent de la suggestion collective.",
+    content: chapter8Raw,
   }
 ];
 
